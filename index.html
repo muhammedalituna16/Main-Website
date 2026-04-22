@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorenta Labs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    
+
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: #000000;
+        color: #f3f4f6;
+      }
+
+      .hero-section-istanbul {
+        background-image: url("images/img/background1.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 1) 5%,
+          rgba(0, 0, 0, 0.5) 40%,
+          rgba(0, 0, 0, 0.2) 100%
+        );
+      }
+
+      .hero-title-serif {
+        font-family: "Luckiest Guy", cursive;
+        text-shadow: 0px 3px 15px rgba(0, 0, 0, 0.7);
+        line-height: 1.2;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        transform: translateY(-75%);
+      }
+
+      .game-showcase {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+      }
+
+      .game-entry {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 2rem;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      @media (min-width: 768px) {
+        .game-entry {
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+        }
+      }
+
+      .game-entry:nth-child(even) .game-visuals {
+        order: 2;
+      }
+      .game-entry:nth-child(even) .game-details {
+        order: 1;
+      }
+
+      .game-visuals img {
+        border-radius: 20px;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .game-entry:hover .game-visuals img {
+        transform: scale(1.05);
+      }
+
+      .game-details h3 {
+        color: #ffffff;
+      }
+      .game-details p {
+        color: #d1d5db;
+      }
+
+      .social-proof {
+        background-color: rgba(14, 165, 233, 0.1);
+        color: #38bdf8;
+        border: 1px solid rgba(14, 165, 233, 0.3);
+      }
+
+      .join-us-section {
+        background: linear-gradient(135deg, #1f2937, #000000);
+      }
+
+      .join-us-button {
+        background-color: #38bdf8;
+        color: #111827;
+        transition: all 0.3s ease;
+      }
+      .join-us-button:hover {
+        background-color: #ffffff;
+        transform: scale(1.05);
+      }
+
+      .social-icon {
+        color: #9ca3af;
+        transition: all 0.3s ease;
+      }
+      .social-icon:hover {
+        color: #38bdf8;
+        transform: translateY(-3px);
+      }
+
+      #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.75s ease-out;
+      }
+
+      #splash-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .splash-logo {
+        display: inline-block;
+        animation: splash-pulse 2s ease-in-out infinite;
+      }
+
+      #marti-wrapper:active {
+          transform: scale(0.95);
+      }
+      #marti-wrapper {
+          transition: transform 0.2s ease;
+      }
+      .opacity-0 { opacity: 0; }
+      .opacity-100 { opacity: 1; }
+      
+      @keyframes splash-pulse {
+        0% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.03); opacity: 1; }
+        100% { transform: scale(1); opacity: 0.9; }
+      }
+
+      @keyframes subtleFadeUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes scroll-anim {
+        0% { transform: translateY(-3px); }
+        50% { transform: translateY(3px); }
+        100% { transform: translateY(-3px); }
+      }
+
+      .fade-in { opacity: 0; }
+      .fade-in.visible { animation: subtleFadeUp 0.8s ease-out forwards; }
+    </style>
+  </head>
+  <body class="antialiased">
+
+    <div id="splash-screen">
+      <div class="border-b border-gray-800 splash-logo px-12"> 
+        <img src="images/img/ali.png" alt="Lorenta Labs Loading..." class="h-60 w-auto">
+      </div>
+    </div>
+
+    <section class="relative h-screen flex items-center justify-center text-center p-4 hero-section-istanbul">
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="relative z-10">
+          <h1 class="text-7xl md:text-9xl text-white uppercase hero-title-serif">
+            <span class="block">LORENTA</span>
+            <span class="block mt-2 md:mt-4">LABS</span>
+          </h1>
+      </div>
+    </section>
+
+    <section id="philosophy" class="relative py-40 lg:py-52 bg-black" style="background-image: url('images/img/background.jpg'); background-size: cover; background-position: center;">
+      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div class="relative z-10 px-6 text-center">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in">Dream. Build. Disrupt.</h2>
+        <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-4xl mx-auto fade-in" style="animation-delay: 200ms">
+          From immersive games to cutting-edge software — we turn ideas into bold digital experiences.
+        </p>
+      </div>
+    </section>
+
+    <section id="games" class="py-20 lg:py-32 bg-black border-t border-gray-800">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 fade-in">Our Adventures</h2>
+
+        <div class="game-showcase">
+
+          <a href="projects/?app=lorenta-os" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] rounded-xl" title="Lorenta OS Details">
+            <div class="game-visuals md:order-1">
+              <img loading="lazy" src="images/lorentaos_images/lorentaos.png" alt="Lorenta OS" class="w-full border border-gray-800" onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/ffffff?text=LORENTA+OS';">
+            </div>
+            <div class="game-details text-center md:text-left md:order-2 px-6">
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 255, 255, 0.1); color: #ffffff; border-color: rgba(255, 255, 255, 0.3);">System Core</div>
+              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-white">Lorenta OS</h3>
+              <p class="text-lg leading-relaxed text-gray-400">Enterprise intelligence redefined. Empowering your business operations through advanced cognitive architecture and autonomous agent orchestration.</p>
+            </div>
+          </a>
+
+          <!--
+          <a href="projects/?app=ZenTurtle" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#B76E79] rounded-xl" title="ZenTurtle App Details">
+            <div class="game-visuals md:order-1">
+              <img loading="lazy" src="images/ZenTurtle_images/ZenTurtle.png" alt="ZenTurtle App" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/050510/B76E79?text=ZenTurtle';">
+            </div>
+            <div class="game-details text-center md:text-left md:order-2 px-6">
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(183, 110, 121, 0.1); color: #B76E79; border-color: rgba(183, 110, 121, 0.3);">Soon</div>
+              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#B76E79]">ZenTurtle</h3>
+              <p class="text-lg leading-relaxed text-[#B76E79]">Fortune Teller. Unlock the mysteries of your future with personalized coffee readings, tarot insights, and cosmic guidance.</p>
+            </div>
+          </a>
+          !-->
+
+          <a href="projects/?app=light-bloom" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#FFD200] rounded-xl" title="Light Bloom Game Details">
+            <div class="game-visuals md:order-1">
+              <img loading="lazy" src="images/lightbloom_images/light-bloom.png" alt="Light Bloom Game" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/2D5A38/FFF4D0?text=Light+Bloom';">
+            </div>
+            <div class="game-details text-center md:text-left md:order-2 px-6">
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 210, 0, 0.1); color: #FFD200; border-color: rgba(255, 210, 0, 0.3);">Play Now</div>
+              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#FFD200] lightbloom-title">Light Bloom</h3>
+              <p class="text-lg leading-relaxed">A puzzle game where sunlight meets strategy. Place fixed-angle mirrors to guide the beam and awaken the sleeping flower.</p>
+            </div>
+          </a>
+
+          <a href="projects/?app=xpify" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#F9D720] rounded-xl" title="Xpify App Details">
+            <div class="game-visuals md:order-1">
+              <img loading="lazy" src="images/xpify_images/xplogo.jpg" alt="Xpify App" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1f2937/f3f4f6?text=Xpify';">
+            </div>
+            <div class="game-details text-center md:text-left md:order-2 px-6">
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(249, 215, 32, 0.1); color: #f9d720; border-color: rgba(249, 215, 32, 0.3);">+1,000 Premium Users</div>
+              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#F9D720]">Xpify</h3>
+              <p class="text-lg leading-relaxed text-[#F9D720]">Your AI-powered life assistant. Organize your day, track your habits, set goals, and level up your real life with Xpify.</p>
+            </div>
+          </a>
+
+          <a href="projects/?app=neon-racer" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#A855F7] rounded-xl" title="Neon Racer Details">
+            <div class="game-visuals md:order-1">
+              <img loading="lazy" src="images/neonracer_images/neon-racer.png" alt="Neon Racer Game" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1f2937/f3f4f6?text=Neon+Racer';">
+            </div>
+            <div class="game-details text-center md:text-left md:order-2 px-6">
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(168, 85, 247, 0.1); color: #a855f7; border-color: rgba(168, 85, 247, 0.3);">Coming Soon</div>
+              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#A855F7]">Neon Racer</h3>
+              <p class="text-lg leading-relaxed text-[#A855F7]">In this race where 80s nostalgia meets cyberpunk aesthetics, test your reflexes and race to the top of the leaderboard!</p>
+            </div>
+          </a>
+
+          <a href="projects/?app=sky-frontier" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#2563EB] rounded-xl" title="Sky Frontier Game Details">
+            <div class="game-visuals md:order-1">
+              <img loading="lazy" src="images/skyfrontier_images/sky-frontier.png" alt="Sky Frontier Game" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/0F172A/E0F2FE?text=Sky+Frontier';">
+            </div>
+            <div class="game-details text-center md:text-left md:order-2 px-6">
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(37, 99, 235, 0.1); color: #2563EB; border-color: rgba(37, 99, 235, 0.3);">Coming Soon</div>
+              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-blue-400">Sky Frontier</h3>
+              <p class="text-lg leading-relaxed text-blue-100">Build your airship empire among the clouds. Explore floating islands, battle aerial foes, and forge your skyfaring legacy.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 lg:py-24 border-t border-gray-800 join-us-section">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 fade-in">LET'S WRITE THE NEXT LEGEND TOGETHER.</h2>
+        <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8 fade-in" style="animation-delay: 200ms">
+          We are looking for talented people who share a passion for development. Join us at Lorenta Labs to make a difference.
+        </p>
+        <a href="legal/contact/" class="join-us-button inline-block text-lg font-bold py-4 px-10 rounded-full fade-in" style="animation-delay: 400ms">Career Opportunities</a>
+      </div>
+    </section>
+
+    <footer class="bg-black text-gray-400 border-t border-gray-800">
+      <div class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+          <div class="flex flex-col items-center md:items-start">
+              <div class="relative w-60 h-60 cursor-pointer mx-auto md:mx-0" id="marti-wrapper">
+                <img id="footer-ali" 
+                    src="images/img/ali.png" 
+                    alt="Lorenta Labs Logo" 
+                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10">
+                
+                <img id="footer-ali-themed" 
+                    src="" 
+                    alt="Lorenta Labs Themed" 
+                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out opacity-0 z-20">
+            </div>
+          </div>
+          <div class="w-full self-start flex justify-center items-start space-x-5">
+            <a href="https://instagram.com/lorentalabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/lorenta-labs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM7 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.1 3.4 6.1 7.8V24h-5V16c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H7z"/></svg>
+            </a>
+            <a href="https://youtube.com/@lorentalabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+          <div>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Legal</h4>
+            <nav class="flex flex-col space-y-3">
+              <a href="legal/terms/" class="hover:text-sky-400 transition-colors">Terms</a>
+              <a href="legal/privacy/" class="hover:text-sky-400 transition-colors">Privacy</a>
+            </nav>
+          </div>
+          <div>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Get In Touch</h4>
+            <a href="legal/contact/" class="hover:text-sky-400 transition-colors">info@lorentalabs.com</a>
+          </div>
+        </div>
+        <div class="mt-0 pt-8 border-t border-gray-800 text-center text-sm">
+          <p>© 2026 Lorenta Labs</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const els = document.querySelectorAll('.fade-in');
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        }, { threshold: 0.1 });
+        els.forEach(el => io.observe(el));
+      });
+
+      window.onload = function() {
+        const splashScreen = document.getElementById('splash-screen');
+        setTimeout(() => {
+          splashScreen.classList.add('hidden');
+        }, 500);
+      };
+
+
+
+      // --- ANA SAYFA MARTI KAZAK DEĞİŞTİRME ---
+      const martiWrapper = document.getElementById('marti-wrapper');
+      const defaultImg = document.getElementById('footer-ali');
+      const themedImg = document.getElementById('footer-ali-themed');
+
+      // Kullanılabilecek kazakların listesi (Dosya isimlerinle aynı olmalı)
+      const sweaters = ['home'];
+
+      if (martiWrapper) {
+          martiWrapper.addEventListener('click', () => {
+              // Eğer şu an temalı kazak görünmüyorsa, rastgele bir tane seç ve göster
+              if (themedImg.classList.contains('opacity-0')) {
+                  const randomApp = sweaters[Math.floor(Math.random() * sweaters.length)];
+                  themedImg.src = `images/img/ali_${randomApp}.png`;
+
+                  themedImg.onload = () => {
+                      themedImg.classList.remove('opacity-0');
+                      themedImg.classList.add('opacity-100');
+                      defaultImg.classList.add('opacity-0');
+                  };
+                  
+                  // Görsel yoksa hata vermemesi için
+                  themedImg.onerror = () => {
+                      themedImg.classList.add('opacity-0');
+                      defaultImg.classList.remove('opacity-0');
+                  };
+              } else {
+                  // Standart hale geri dön
+                  themedImg.classList.add('opacity-0');
+                  themedImg.classList.remove('opacity-100');
+                  defaultImg.classList.remove('opacity-0');
+              }
+          });
+      }
+    </script>
+  </body>
+</html>
