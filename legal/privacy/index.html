@@ -27,10 +27,9 @@
     <style>
       body {
         font-family: "Lato", sans-serif;
-        background-color: #000000; /* Black */
-        color: #f3f4f6; /* Light Gray */
+        background-color: #000000;
+        color: #f3f4f6;
       }
-      /* New Hero Section Style */
       .hero-section-legal {
         background-image: url('../../images/img/youtube_cover.png');
         background-size: cover;
@@ -52,250 +51,274 @@
         color: #38bdf8;
         transform: translateY(-3px);
       }
+      #lang-switcher .active-text { color: #000 !important; }
+      #lang-switcher .inactive-text { color: #888 !important; }
+      .lang-tr-active #lang-indicator { transform: translateX(0); }
+      .lang-en-active #lang-indicator { transform: translateX(38px); }
     </style>
   </head>
   <body class="antialiased">
+    <div class="fixed top-6 right-6 z-[10000] flex items-center">
+      <div id="lang-switcher" class="relative w-20 h-9 bg-white/10 backdrop-blur-md border border-white/20 rounded-full cursor-pointer flex items-center justify-between px-1 text-[11px] font-bold tracking-widest transition-all duration-300 hover:border-white/40">
+        <div id="lang-indicator" class="absolute w-8 h-7 bg-white rounded-full transition-all duration-300 ease-out shadow-lg"></div>
+        <span class="relative z-10 w-full text-center transition-colors duration-300" id="lang-tr">TR</span>
+        <span class="relative z-10 w-full text-center transition-colors duration-300" id="lang-en">EN</span>
+      </div>
+    </div>
+
     <header class="absolute top-0 left-0 w-full z-20 transition-all duration-300">
       <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="../../index.html" class="flex items-center"></a>
-
-        <a href="../../index.html" class="text-gray-200 font-semibold hover:text-white transition-colors"
-          >Back to Home</a
-        >
+        <a href="../../index.html" class="text-gray-200 font-semibold hover:text-white transition-colors" data-i18n="back_home">Back to Home</a>
       </div>
     </header>
 
     <section class="relative h-96 flex items-center justify-center text-center hero-section-legal">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="relative z-10 px-4">
-            <h1 class="text-5xl md:text-7xl font-black text-white" style="font-family: 'Times New Roman', Times, serif; letter-spacing: 0.1em;">
+            <h1 class="text-5xl md:text-7xl font-black text-white" style="font-family: 'Times New Roman', Times, serif; letter-spacing: 0.1em;" data-i18n="privacy_title">
               Privacy Policy
             </h1>
-            <p class="text-gray-300 mt-4 text-lg">Last Updated: June 28, 2025</p>
+            <p class="text-gray-300 mt-4 text-lg" data-i18n="last_updated">Last Updated: January 28, 2026</p>
         </div>
     </section>
 
     <main class="bg-black py-16 lg:py-24">
       <div class="container mx-auto px-6 max-w-4xl content-section">
 
-        <p class="text-gray-300 leading-relaxed mb-6 text-lg">
+        <p class="text-gray-300 leading-relaxed mb-6 text-lg" data-i18n="intro_p">
           Lorenta Labs (“we,” “us,” or “our”) respects your privacy. This Privacy Policy applies to
-          <strong>all games and services published by Lorenta Labs</strong> (including Light Bloom, Cosmos, and any future titles)
+          all games and services published by Lorenta Labs (including Light Bloom, ZenTurtle, and any future titles)
           and explains what information we collect, how we use, share, and protect it. By using our Services, you agree to
-          this Policy and our
-          <a class="underline text-gray-100" href="../terms/index.html" target="_blank" rel="noopener">Terms of Service</a>.
+          this Policy and our <a class="underline text-gray-100" href="../terms/index.html">Terms of Service</a>.
         </p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">1. Information We Collect</h2>
-
-        <p class="text-gray-300 leading-relaxed mb-2"><strong>Information You Provide Directly:</strong></p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec1_title">1. Information We Collect</h2>
+        <p class="text-gray-300 leading-relaxed mb-2"><strong data-i18n="sec1_sub1">Information You Provide Directly:</strong></p>
         <ul class="list-disc list-inside text-gray-300 leading-relaxed mt-2 pl-4 space-y-2 mb-6">
-          <li>When you create an account (e.g., username, email address).</li>
-          <li>When you contact us for customer support.</li>
+          <li data-i18n="sec1_item1">When you create an account (e.g., username, email address).</li>
+          <li data-i18n="sec1_item2">When you contact us for customer support.</li>
         </ul>
 
-        <p class="text-gray-300 leading-relaxed mb-2"><strong>Information We Collect Automatically:</strong></p>
+        <p class="text-gray-300 leading-relaxed mb-2"><strong data-i18n="sec1_sub2">Information We Collect Automatically:</strong></p>
         <ul class="list-disc list-inside text-gray-300 leading-relaxed mt-2 pl-4 space-y-2 mb-6">
-          <li><strong>Device Information:</strong> device model, OS version, coarse location derived from IP, and advertising/device identifiers (e.g., IDFA/GAID) where platform rules and your consent allow.</li>
-          <li><strong>Usage Data:</strong> in-game progress, playtime, scores, feature interactions, crash/diagnostic logs (e.g., reflex times in “Neon Racer,” reading history in “Cosmos”).</li>
-          <li><strong>Cookies and Similar Technologies:</strong> used on our website to operate, secure, and improve the Services.</li>
+          <li data-i18n="sec1_item3">Device Information: device model, OS version, coarse location, and advertising identifiers.</li>
+          <li data-i18n="sec1_item4">Usage Data: in-game progress, playtime, scores, feature interactions, and diagnostic logs.</li>
+          <li data-i18n="sec1_item5">Cookies and Similar Technologies: used to operate, secure, and improve our website.</li>
         </ul>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">2. How We Use Your Information</h2>
-        <p class="text-gray-300 leading-relaxed mb-2">We use the information we collect to:</p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec2_title">2. How We Use Your Information</h2>
         <ul class="list-disc list-inside text-gray-300 leading-relaxed mt-2 pl-4 space-y-2 mb-6">
-          <li>Provide, maintain, and improve our Services.</li>
-          <li>Personalize your game experience (e.g., saving your progress).</li>
-          <li>Enable social features like leaderboards.</li>
-          <li>Troubleshoot technical issues and provide customer support.</li>
-          <li>Analyze usage to develop new games and features.</li>
-          <li>Prevent fraud and ensure the security/integrity of our Services.</li>
-          <li>Send marketing or push notifications <em>only with your consent</em> when required by law.</li>
+          <li data-i18n="sec2_item1">Provide, maintain, and improve our Services.</li>
+          <li data-i18n="sec2_item2">Personalize your game experience.</li>
+          <li data-i18n="sec2_item3">Enable social features like leaderboards.</li>
+          <li data-i18n="sec2_item4">Troubleshoot technical issues and provide support.</li>
+          <li data-i18n="sec2_item5">Analyze usage to develop new games and features.</li>
+          <li data-i18n="sec2_item6">Prevent fraud and ensure security.</li>
         </ul>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">3. How We Share Your Information</h2>
-        <p class="text-gray-300 leading-relaxed mb-2">
-          We do not sell your personal information. We share information only in these cases:
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec3_title">3. How We Share Your Information</h2>
+        <p class="text-gray-300 leading-relaxed mb-2" data-i18n="sec3_p">We do not sell your personal information. We share information only in these cases:</p>
         <ul class="list-disc list-inside text-gray-300 leading-relaxed mt-2 pl-4 space-y-2 mb-6">
-          <li><strong>Service Providers:</strong> analytics, hosting, crash reporting, customer support—only to perform services for us and under appropriate safeguards.</li>
-          <li><strong>Legal Obligations:</strong> to comply with the law or protect our rights, property, or safety.</li>
-          <li><strong>Business Transfers:</strong> as part of a merger, acquisition, or asset sale.</li>
+          <li data-i18n="sec3_item1">Service Providers: analytics, hosting, and customer support providers.</li>
+          <li data-i18n="sec3_item2">Legal Obligations: to comply with laws or protect our rights.</li>
+          <li data-i18n="sec3_item3">Business Transfers: as part of a merger or asset sale.</li>
         </ul>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">4. Third-Party SDKs</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          Our games may integrate third-party SDKs (e.g., Unity, Firebase/Crashlytics, GameAnalytics, and—if enabled—ad networks).
-          These partners may process limited device/usage data to provide their services. Details and links to their policies will be
-          listed in-app and updated as our integrations change.
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec4_title">4. Third-Party SDKs</h2>
+        <p class="text-gray-300 leading-relaxed mb-6" data-i18n="sec4_p">Our games may integrate third-party SDKs (e.g., Unity, Firebase). These partners process limited data to provide their services according to their own policies.</p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">5. Data Security</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          We take reasonable technical and administrative measures to protect your information from unauthorized access, alteration,
-          or disclosure. However, no method of transmission or storage is 100% secure.
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec5_title">5. Data Security</h2>
+        <p class="text-gray-300 leading-relaxed mb-6" data-i18n="sec5_p">We take reasonable measures to protect your information, but no method of transmission is 100% secure.</p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">6. Children’s Privacy</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          Our Services are not directed to children under the age of 13 (or 16 in the EEA/UK, unless local law allows a lower age not
-          below 13). We do not knowingly collect personal data from children without verifiable parental consent. If you believe a child
-          has provided personal data to us, please contact us to request deletion.
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec6_title">6. Children’s Privacy</h2>
+        <p class="text-gray-300 leading-relaxed mb-6" data-i18n="sec6_p">Our Services are not directed to children under 13. We do not knowingly collect personal data from children without parental consent.</p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">7. Your Rights</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          Depending on your location, you may have rights to access, correct, delete, or port your information, and to object to or
-          restrict certain processing. Where processing relies on consent (e.g., personalized ads/analytics), you can withdraw consent
-          at any time via in-app settings or by contacting us.
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec7_title">7. Your Rights</h2>
+        <p class="text-gray-300 leading-relaxed mb-6" data-i18n="sec7_p">Depending on your location, you may have rights to access, correct, or delete your information.</p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">8. Managing Preferences (Consent & Opt-Out)</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          You can manage analytics/ads consent in the game’s settings. California residents may opt out of “sale”/“sharing” for
-          cross-context behavioral advertising via a “Do Not Sell/Share” control where applicable.
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec8_title">8. Managing Preferences</h2>
+        <p class="text-gray-300 leading-relaxed mb-6" data-i18n="sec8_p">You can manage analytics and ads consent in the game’s settings or your device options.</p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">9. International Transfers & Retention</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          We may process data in countries outside your own. When we transfer personal data internationally, we use appropriate
-          safeguards (e.g., Standard Contractual Clauses). We retain data only as long as necessary for the purposes in this Policy
-          or as required by law.
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec9_title">9. International Transfers</h2>
+        <p class="text-gray-300 leading-relaxed mb-6" data-i18n="sec9_p">We may process data in countries outside your own using appropriate safeguards.</p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">10. Changes to This Policy</h2>
-        <p class="text-gray-300 leading-relaxed mb-6">
-          We may update this Privacy Policy from time to time. When we make changes, we will post the updated version here and revise
-          the “Last Updated” date.
-        </p>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec10_title">10. Changes to This Policy</h2>
+        <p class="text-gray-300 leading-relaxed mb-6" data-i18n="sec10_p">We may update this policy periodically. Changes will be posted here with a revised date.</p>
 
-        <h2 class="text-3xl font-bold text-white mt-12 mb-4">11. Contact Us</h2>
+        <h2 class="text-3xl font-bold text-white mt-12 mb-4" data-i18n="sec11_title">11. Contact Us</h2>
         <p class="text-gray-300 leading-relaxed mb-6">
-          Questions or requests about this 
-          <a class="underline text-gray-100" href="mailto:info@lorentalabs.com">info@lorentalabs.com</a>. See also our 
-          <a class="underline text-gray-100" href="../terms/index.html" target="_blank" rel="noopener">Terms of Service</a>.
+          <span data-i18n="sec11_p">Questions or requests about this</span> 
+          <a class="underline text-gray-100" href="mailto:info@lorentalabs.com">info@lorentalabs.com</a>.
         </p>
 
       </div>
     </main>
 
-
-     <footer class="bg-black text-gray-400 border-t border-gray-800">
-  <div class="container mx-auto px-6 py-16">
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left"
-    >
-
-    
-      <div class="flex flex-col items-center md:items-start">
-        <img
-          src="../../images/img/ali.png"
-          alt="Lorenta Labs Logo"
-          class="h-60 w-auto"
-          onerror="this.onerror=null;this.src='https://placehold.co/120x40/000000/ffffff?text=LORENTA';"
-        />
+    <footer class="bg-black text-gray-400 border-t border-gray-800">
+      <div class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+          <div class="flex flex-col items-center md:items-start">
+            <img src="../../images/img/ali.png" alt="Lorenta Labs Logo" class="h-60 w-auto" />
+          </div>
+          <div class="w-full self-start flex justify-center items-start space-x-5">
+            <a href="https://instagram.com/lorentalabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/lorenta-labs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM7 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.1 3.4 6.1 7.8V24h-5V16c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H7z"/></svg>
+            </a>
+            <a href="https://youtube.com/@lorentalabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+          <div>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="legal_h4">Legal</h4>
+            <nav class="flex flex-col space-y-3">
+              <a href="../terms/index.html" class="hover:text-sky-400 transition-colors" data-i18n="terms_a">Terms</a>
+              <a href="./index.html" class="hover:text-sky-400 transition-colors" data-i18n="privacy_a">Privacy</a>
+            </nav>
+          </div>
+          <div>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="contact_h4">Get In Touch</h4>
+            <a href="../contact/index.html" class="hover:text-sky-400 transition-colors">info@lorentalabs.com</a>
+          </div>
+        </div>
+        <div class="mt-0 pt-8 border-t border-gray-800 text-center text-sm">
+          <p>© 2026 Lorenta Labs</p>
+        </div>
       </div>
+    </footer>
 
-   <div class="w-full self-start flex justify-center items-start space-x-5">
-  <a
-    href="https://instagram.com/lorentalabs"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="social-icon"
-    aria-label="Instagram"
-  >
-    <svg
-      class="w-6 h-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-    </svg>
-  </a>
+    <script>
+      const uiTranslations = {
+        en: {
+          back_home: "Back to Home",
+          privacy_title: "Privacy Policy",
+          last_updated: "Last Updated: January 28, 2026",
+          intro_p: "Lorenta Labs (“we,” “us,” or “our”) respects your privacy. This Privacy Policy applies to all games and services published by Lorenta Labs (including Light Bloom, ZenTurtle, and any future titles) and explains what information we collect, how we use, share, and protect it. By using our Services, you agree to this Policy and our Terms of Service.",
+          sec1_title: "1. Information We Collect",
+          sec1_sub1: "Information You Provide Directly:",
+          sec1_item1: "When you create an account (e.g., username, email address).",
+          sec1_item2: "When you contact us for customer support.",
+          sec1_sub2: "Information We Collect Automatically:",
+          sec1_item3: "Device Information: device model, OS version, coarse location, and advertising identifiers.",
+          sec1_item4: "Usage Data: in-game progress, playtime, scores, feature interactions, and diagnostic logs.",
+          sec1_item5: "Cookies and Similar Technologies: used to operate, secure, and improve our website.",
+          sec2_title: "2. How We Use Your Information",
+          sec2_item1: "Provide, maintain, and improve our Services.",
+          sec2_item2: "Personalize your game experience.",
+          sec2_item3: "Enable social features like leaderboards.",
+          sec2_item4: "Troubleshoot technical issues and provide support.",
+          sec2_item5: "Analyze usage to develop new games and features.",
+          sec2_item6: "Prevent fraud and ensure security.",
+          sec3_title: "3. How We Share Your Information",
+          sec3_p: "We do not sell your personal information. We share information only in these cases:",
+          sec3_item1: "Service Providers: analytics, hosting, and customer support providers.",
+          sec3_item2: "Legal Obligations: to comply with laws or protect our rights.",
+          sec3_item3: "Business Transfers: as part of a merger or asset sale.",
+          sec4_title: "4. Third-Party SDKs",
+          sec4_p: "Our games may integrate third-party SDKs (e.g., Unity, Firebase). These partners process limited data to provide their services according to their own policies.",
+          sec5_title: "5. Data Security",
+          sec5_p: "We take reasonable measures to protect your information, but no method of transmission is 100% secure.",
+          sec6_title: "6. Children’s Privacy",
+          sec6_p: "Our Services are not directed to children under 13. We do not knowingly collect personal data from children without parental consent.",
+          sec7_title: "7. Your Rights",
+          sec7_p: "Depending on your location, you may have rights to access, correct, or delete your information.",
+          sec8_title: "8. Managing Preferences",
+          sec8_p: "You can manage analytics and ads consent in the game’s settings or your device options.",
+          sec9_title: "9. International Transfers",
+          sec9_p: "We may process data in countries outside your own using appropriate safeguards.",
+          sec10_title: "10. Changes to This Policy",
+          sec10_p: "We may update this policy periodically. Changes will be posted here with a revised date.",
+          sec11_title: "11. Contact Us",
+          sec11_p: "Questions or requests about this",
+          legal_h4: "Legal",
+          terms_a: "Terms",
+          privacy_a: "Privacy",
+          contact_h4: "Get In Touch"
+        },
+        tr: {
+          back_home: "Ana Sayfaya Dön",
+          privacy_title: "Gizlilik Politikası",
+          last_updated: "Son Güncelleme: 28 Ocak 2026",
+          intro_p: "Lorenta Labs (“biz”, “bize” veya “bizim”) gizliliğinize saygı duyar. Bu Gizlilik Politikası, Lorenta Labs tarafından yayınlanan tüm oyunlar ve hizmetler (Light Bloom, ZenTurtle ve gelecekteki tüm başlıklar dahil) için geçerlidir ve hangi bilgileri topladığımızı, bunları nasıl kullandığımızı, paylaştığımızı ve koruduğumuzu açıklar. Hizmetlerimizi kullanarak bu Politikayı ve Kullanım Koşullarımızı kabul etmiş olursunuz.",
+          sec1_title: "1. Topladığımız Bilgiler",
+          sec1_sub1: "Doğrudan Sağladığınız Bilgiler:",
+          sec1_item1: "Bir hesap oluşturduğunuzda (örn. kullanıcı adı, e-posta adresi).",
+          sec1_item2: "Müşteri desteği için bizimle iletişime geçtiğinizde.",
+          sec1_sub2: "Otomatik Olarak Topladığımız Bilgiler:",
+          sec1_item3: "Cihaz Bilgileri: cihaz modeli, işletim sistemi sürümü, kaba konum ve reklam tanımlayıcıları.",
+          sec1_item4: "Kullanım Verileri: oyun içi ilerleme, oyun süresi, puanlar, özellik etkileşimleri ve tanılama günlükleri.",
+          sec1_item5: "Çerezler ve Benzer Teknolojiler: web sitemizi işletmek, güvenliğini sağlamak ve geliştirmek için kullanılır.",
+          sec2_title: "2. Bilgilerinizi Nasıl Kullanıyoruz",
+          sec2_item1: "Hizmetlerimizi sağlamak, sürdürmek ve iyileştirmek.",
+          sec2_item2: "Oyun deneyiminizi kişiselleştirmek.",
+          sec2_item3: "Liderlik tabloları gibi sosyal özellikleri etkinleştirmek.",
+          sec2_item4: "Teknik sorunları gidermek ve destek sağlamak.",
+          sec2_item5: "Yeni oyunlar geliştirmek için kullanım analizleri yapmak.",
+          sec2_item6: "Dolandırıcılığı önlemek ve güvenliği sağlamak.",
+          sec3_title: "3. Bilgilerinizi Nasıl Paylaşıyoruz",
+          sec3_p: "Kişisel bilgilerinizi satmıyoruz. Bilgileri yalnızca şu durumlarda paylaşıyoruz:",
+          sec3_item1: "Hizmet Sağlayıcılar: analiz, barındırma ve müşteri destek sağlayıcıları.",
+          sec3_item2: "Yasal Yükümlülükler: yasalara uymak veya haklarımızı korumak için.",
+          sec3_item3: "İş Transferleri: bir birleşme veya varlık satışının parçası olarak.",
+          sec4_title: "4. Üçüncü Taraf SDK'lar",
+          sec4_p: "Oyunlarımız üçüncü taraf SDK'ları (örn. Unity, Firebase) entegre edebilir. Bu ortaklar, kendi politikalarına göre hizmet sağlamak için sınırlı veri işlerler.",
+          sec5_title: "5. Veri Güvenliği",
+          sec5_p: "Bilgilerinizi korumak için makul önlemler alıyoruz, ancak hiçbir iletim yöntemi %100 güvenli değildir.",
+          sec6_title: "6. Çocukların Gizliliği",
+          sec6_p: "Hizmetlerimiz 13 yaşın altındaki çocuklara yönelik değildir. Ebeveyn izni olmadan çocuklardan bilerek veri toplamıyoruz.",
+          sec7_title: "7. Haklarınız",
+          sec7_p: "Bulunduğunuz yere bağlı olarak bilgilerinize erişme, düzeltme veya silme haklarına sahip olabilirsiniz.",
+          sec8_title: "8. Tercihleri Yönetme",
+          sec8_p: "Analitik ve reklam onayını oyun ayarlarından veya cihaz seçeneklerinizden yönetebilirsiniz.",
+          sec9_title: "9. Uluslararası Transferler",
+          sec9_p: "Verileri uygun korumalar kullanarak kendi ülkenizin dışındaki ülkelerde işleyebiliriz.",
+          sec10_title: "10. Politikadaki Değişiklikler",
+          sec10_p: "Bu politikayı periyodik olarak güncelleyebiliriz. Değişiklikler revize edilmiş tarihle burada yayınlanacaktır.",
+          sec11_title: "11. İletişim",
+          sec11_p: "Bununla ilgili sorularınız veya talepleriniz için:",
+          legal_h4: "Yasal",
+          terms_a: "Kullanım Koşulları",
+          privacy_a: "Gizlilik",
+          contact_h4: "İletişim"
+        }
+      };
 
-  <a
-    href="https://www.linkedin.com/company/lorenta-labs"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="social-icon"
-    aria-label="LinkedIn"
-    title="LinkedIn"
-  >
-    <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM7 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.1 3.4 6.1 7.8V24h-5V16c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H7z"
-      />
-    </svg>
-  </a>
+      function updateLanguage(lang) {
+        const isTr = lang === 'tr';
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (uiTranslations[lang][key]) el.innerText = uiTranslations[lang][key];
+        });
 
-  <a
-    href="https://youtube.com/@lorentalabs"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="social-icon"
-    aria-label="YouTube"
-  >
-    <svg
-      class="w-6 h-6"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path
-        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"
-      ></path>
-      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-    </svg>
-  </a>
-</div>
+        const switcher = document.getElementById('lang-switcher');
+        const trText = document.getElementById('lang-tr');
+        const enText = document.getElementById('lang-en');
 
+        if (isTr) {
+          switcher.classList.add('lang-tr-active');
+          switcher.classList.remove('lang-en-active');
+          trText.classList.add('active-text');
+          enText.classList.add('inactive-text');
+        } else {
+          switcher.classList.add('lang-en-active');
+          switcher.classList.remove('lang-tr-active');
+          enText.classList.add('active-text');
+          trText.classList.add('inactive-text');
+        }
+        localStorage.setItem('preferredLang', lang);
+      }
 
-      <div>
-        <h4
-          class="font-bold text-white uppercase tracking-wider text-sm mb-4"
-        >
-          Legal
-        </h4>
-        <nav class="flex flex-col space-y-3">
-          <a href="../terms/index.html" class="hover:text-sky-400 transition-colors"
-            >Terms</a
-          >
-          <a
-            href="./index.html"
-            class="hover:text-sky-400 transition-colors"
-            >Privacy</a
-          >
-        </nav>
-      </div>
+      document.getElementById('lang-switcher').addEventListener('click', () => {
+        const currentLang = localStorage.getItem('preferredLang') || 'en';
+        updateLanguage(currentLang === 'en' ? 'tr' : 'en');
+      });
 
-      <div>
-        <h4
-          class="font-bold text-white uppercase tracking-wider text-sm mb-4"
-        >
-          Get In Touch
-        </h4>
-        <a href="../contact/index.html" class="hover:text-sky-400 transition-colors"
-          >info@lorentalabs.com</a
-        >
-
-        
-      </div>
-    </div>
-
-    <div class="mt-0 pt-8 border-t border-gray-800 text-center text-sm">
-      <p>© 2026 Lorenta Labs</p>
-    </div>
-  </div>
-</footer>
+      document.addEventListener('DOMContentLoaded', () => {
+        updateLanguage(localStorage.getItem('preferredLang') || 'en');
+      });
+    </script>
   </body>
 </html>

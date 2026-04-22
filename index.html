@@ -164,6 +164,12 @@
       }
       .opacity-0 { opacity: 0; }
       .opacity-100 { opacity: 1; }
+
+      #lang-switcher .active-text { color: #000 !important; }
+      #lang-switcher .inactive-text { color: #888 !important; }
+
+      .lang-tr-active #lang-indicator { transform: translateX(0); }
+      .lang-en-active #lang-indicator { transform: translateX(38px); }
       
       @keyframes splash-pulse {
         0% { transform: scale(1); opacity: 0.9; }
@@ -193,6 +199,15 @@
       </div>
     </div>
 
+    <div class="fixed top-6 right-6 z-[10000] flex items-center">
+      <div id="lang-switcher" class="relative w-20 h-9 bg-white/10 backdrop-blur-md border border-white/20 rounded-full cursor-pointer flex items-center px-1 text-[11px] font-bold tracking-widest transition-all duration-300 hover:border-white/40">
+        <div id="lang-indicator" class="absolute w-[34px] h-[28px] bg-white rounded-full transition-all duration-300 ease-out shadow-lg left-1 top-[3px]"></div>
+        
+        <span class="relative z-10 flex-1 text-center transition-colors duration-300" id="lang-tr">TR</span>
+        <span class="relative z-10 flex-1 text-center transition-colors duration-300" id="lang-en">EN</span>
+      </div>
+    </div>
+
     <section class="relative h-screen flex items-center justify-center text-center p-4 hero-section-istanbul">
       <div class="absolute inset-0 hero-overlay"></div>
       <div class="relative z-10">
@@ -206,8 +221,8 @@
     <section id="philosophy" class="relative py-40 lg:py-52 bg-black" style="background-image: url('images/img/background.jpg'); background-size: cover; background-position: center;">
       <div class="absolute inset-0 bg-black bg-opacity-70"></div>
       <div class="relative z-10 px-6 text-center">
-        <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in">Dream. Build. Disrupt.</h2>
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-4xl mx-auto fade-in" style="animation-delay: 200ms">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in" data-i18n="philosophy_h2">Dream. Build. Disrupt.</h2>
+        <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-4xl mx-auto fade-in" style="animation-delay: 200ms" data-i18n="philosophy_p">
           From immersive games to cutting-edge software — we turn ideas into bold digital experiences.
         </p>
       </div>
@@ -215,7 +230,7 @@
 
     <section id="games" class="py-20 lg:py-32 bg-black border-t border-gray-800">
       <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 fade-in">Our Adventures</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 fade-in" data-i18n="adventures_h2">Our Adventures</h2>
 
         <div class="game-showcase">
 
@@ -224,33 +239,20 @@
               <img loading="lazy" src="images/lorentaos_images/lorentaos.png" alt="Lorenta OS" class="w-full border border-gray-800" onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/ffffff?text=LORENTA+OS';">
             </div>
             <div class="game-details text-center md:text-left md:order-2 px-6">
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 255, 255, 0.1); color: #ffffff; border-color: rgba(255, 255, 255, 0.3);">System Core</div>
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 255, 255, 0.1); color: #ffffff; border-color: rgba(255, 255, 255, 0.3);" data-i18n="lorenta_badge">System Core</div>
               <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-white">Lorenta OS</h3>
-              <p class="text-lg leading-relaxed text-gray-400">Enterprise intelligence redefined. Empowering your business operations through advanced cognitive architecture and autonomous agent orchestration.</p>
+              <p class="text-lg leading-relaxed text-gray-400" data-i18n="lorenta_p">Enterprise intelligence redefined. Empowering your business operations through advanced cognitive architecture and autonomous agent orchestration.</p>
             </div>
           </a>
-
-          <!--
-          <a href="projects/?app=ZenTurtle" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#B76E79] rounded-xl" title="ZenTurtle App Details">
-            <div class="game-visuals md:order-1">
-              <img loading="lazy" src="images/ZenTurtle_images/ZenTurtle.png" alt="ZenTurtle App" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/050510/B76E79?text=ZenTurtle';">
-            </div>
-            <div class="game-details text-center md:text-left md:order-2 px-6">
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(183, 110, 121, 0.1); color: #B76E79; border-color: rgba(183, 110, 121, 0.3);">Soon</div>
-              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#B76E79]">ZenTurtle</h3>
-              <p class="text-lg leading-relaxed text-[#B76E79]">Fortune Teller. Unlock the mysteries of your future with personalized coffee readings, tarot insights, and cosmic guidance.</p>
-            </div>
-          </a>
-          !-->
 
           <a href="projects/?app=light-bloom" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#FFD200] rounded-xl" title="Light Bloom Game Details">
             <div class="game-visuals md:order-1">
               <img loading="lazy" src="images/lightbloom_images/light-bloom.png" alt="Light Bloom Game" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/2D5A38/FFF4D0?text=Light+Bloom';">
             </div>
             <div class="game-details text-center md:text-left md:order-2 px-6">
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 210, 0, 0.1); color: #FFD200; border-color: rgba(255, 210, 0, 0.3);">Play Now</div>
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 210, 0, 0.1); color: #FFD200; border-color: rgba(255, 210, 0, 0.3);" data-i18n="lightbloom_badge">Play Now</div>
               <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#FFD200] lightbloom-title">Light Bloom</h3>
-              <p class="text-lg leading-relaxed">A puzzle game where sunlight meets strategy. Place fixed-angle mirrors to guide the beam and awaken the sleeping flower.</p>
+              <p class="text-lg leading-relaxed" data-i18n="lightbloom_p">A puzzle game where sunlight meets strategy. Place fixed-angle mirrors to guide the beam and awaken the sleeping flower.</p>
             </div>
           </a>
 
@@ -259,9 +261,9 @@
               <img loading="lazy" src="images/xpify_images/xplogo.jpg" alt="Xpify App" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1f2937/f3f4f6?text=Xpify';">
             </div>
             <div class="game-details text-center md:text-left md:order-2 px-6">
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(249, 215, 32, 0.1); color: #f9d720; border-color: rgba(249, 215, 32, 0.3);">+1,000 Premium Users</div>
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(249, 215, 32, 0.1); color: #f9d720; border-color: rgba(249, 215, 32, 0.3);" data-i18n="xpify_badge">+1,000 Premium Users</div>
               <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#F9D720]">Xpify</h3>
-              <p class="text-lg leading-relaxed text-[#F9D720]">Your AI-powered life assistant. Organize your day, track your habits, set goals, and level up your real life with Xpify.</p>
+              <p class="text-lg leading-relaxed text-[#F9D720]" data-i18n="xpify_p">Your AI-powered life assistant. Organize your day, track your habits, set goals, and level up your real life with Xpify.</p>
             </div>
           </a>
 
@@ -270,9 +272,9 @@
               <img loading="lazy" src="images/neonracer_images/neon-racer.png" alt="Neon Racer Game" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1f2937/f3f4f6?text=Neon+Racer';">
             </div>
             <div class="game-details text-center md:text-left md:order-2 px-6">
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(168, 85, 247, 0.1); color: #a855f7; border-color: rgba(168, 85, 247, 0.3);">Coming Soon</div>
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(168, 85, 247, 0.1); color: #a855f7; border-color: rgba(168, 85, 247, 0.3);" data-i18n="neon_badge">Coming Soon</div>
               <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#A855F7]">Neon Racer</h3>
-              <p class="text-lg leading-relaxed text-[#A855F7]">In this race where 80s nostalgia meets cyberpunk aesthetics, test your reflexes and race to the top of the leaderboard!</p>
+              <p class="text-lg leading-relaxed text-[#A855F7]" data-i18n="neon_p">In this race where 80s nostalgia meets cyberpunk aesthetics, test your reflexes and race to the top of the leaderboard!</p>
             </div>
           </a>
 
@@ -281,9 +283,9 @@
               <img loading="lazy" src="images/skyfrontier_images/sky-frontier.png" alt="Sky Frontier Game" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/0F172A/E0F2FE?text=Sky+Frontier';">
             </div>
             <div class="game-details text-center md:text-left md:order-2 px-6">
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(37, 99, 235, 0.1); color: #2563EB; border-color: rgba(37, 99, 235, 0.3);">Coming Soon</div>
+              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(37, 99, 235, 0.1); color: #2563EB; border-color: rgba(37, 99, 235, 0.3);" data-i18n="sky_badge">Coming Soon</div>
               <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-blue-400">Sky Frontier</h3>
-              <p class="text-lg leading-relaxed text-blue-100">Build your airship empire among the clouds. Explore floating islands, battle aerial foes, and forge your skyfaring legacy.</p>
+              <p class="text-lg leading-relaxed text-blue-100" data-i18n="sky_p">Build your airship empire among the clouds. Explore floating islands, battle aerial foes, and forge your skyfaring legacy.</p>
             </div>
           </a>
         </div>
@@ -292,11 +294,11 @@
 
     <section class="py-20 lg:py-24 border-t border-gray-800 join-us-section">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 fade-in">LET'S WRITE THE NEXT LEGEND TOGETHER.</h2>
-        <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8 fade-in" style="animation-delay: 200ms">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 fade-in" data-i18n="join_h2">LET'S WRITE THE NEXT LEGEND TOGETHER.</h2>
+        <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8 fade-in" style="animation-delay: 200ms" data-i18n="join_p">
           We are looking for talented people who share a passion for development. Join us at Lorenta Labs to make a difference.
         </p>
-        <a href="legal/contact/" class="join-us-button inline-block text-lg font-bold py-4 px-10 rounded-full fade-in" style="animation-delay: 400ms">Career Opportunities</a>
+        <a href="legal/contact/" class="join-us-button inline-block text-lg font-bold py-4 px-10 rounded-full fade-in" style="animation-delay: 400ms" data-i18n="career_btn">Career Opportunities</a>
       </div>
     </section>
 
@@ -309,7 +311,6 @@
                     src="images/img/ali.png" 
                     alt="Lorenta Labs Logo" 
                     class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10">
-                
                 <img id="footer-ali-themed" 
                     src="" 
                     alt="Lorenta Labs Themed" 
@@ -332,14 +333,14 @@
             </a>
           </div>
           <div>
-            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Legal</h4>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="legal_h4">Legal</h4>
             <nav class="flex flex-col space-y-3">
-              <a href="legal/terms/" class="hover:text-sky-400 transition-colors">Terms</a>
-              <a href="legal/privacy/" class="hover:text-sky-400 transition-colors">Privacy</a>
+              <a href="legal/terms/" class="hover:text-sky-400 transition-colors" data-i18n="terms_a">Terms</a>
+              <a href="legal/privacy/" class="hover:text-sky-400 transition-colors" data-i18n="privacy_a">Privacy</a>
             </nav>
           </div>
           <div>
-            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Get In Touch</h4>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="contact_h4">Get In Touch</h4>
             <a href="legal/contact/" class="hover:text-sky-400 transition-colors">info@lorentalabs.com</a>
           </div>
         </div>
@@ -350,7 +351,85 @@
     </footer>
 
     <script>
+      const uiTranslations = {
+        en: {
+          philosophy_h2: "Dream. Build. Disrupt.",
+          philosophy_p: "From immersive games to cutting-edge software — we turn ideas into bold digital experiences.",
+          adventures_h2: "Our Adventures",
+          lorenta_badge: "System Core",
+          lorenta_p: "Enterprise intelligence redefined. Empowering your business operations through advanced cognitive architecture and autonomous agent orchestration.",
+          lightbloom_badge: "Play Now",
+          lightbloom_p: "A puzzle game where sunlight meets strategy. Place fixed-angle mirrors to guide the beam and awaken the sleeping flower.",
+          xpify_badge: "+1,000 Premium Users",
+          xpify_p: "Your AI-powered life assistant. Organize your day, track your habits, set goals, and level up your real life with Xpify.",
+          neon_badge: "Coming Soon",
+          neon_p: "In this race where 80s nostalgia meets cyberpunk aesthetics, test your reflexes and race to the top of the leaderboard!",
+          sky_badge: "Coming Soon",
+          sky_p: "Build your airship empire among the clouds. Explore floating islands, battle aerial foes, and forge your skyfaring legacy.",
+          join_h2: "LET'S WRITE THE NEXT LEGEND TOGETHER.",
+          join_p: "We are looking for talented people who share a passion for development. Join us at Lorenta Labs to make a difference.",
+          career_btn: "Career Opportunities",
+          legal_h4: "Legal",
+          terms_a: "Terms",
+          privacy_a: "Privacy",
+          contact_h4: "Get In Touch"
+        },
+        tr: {
+          philosophy_h2: "Hayal Et. İnşa Et. Dönüştür.",
+          philosophy_p: "Sürükleyici oyunlardan en yeni yazılımlara — fikirleri cesur dijital deneyimlere dönüştürüyoruz.",
+          adventures_h2: "Maceralarımız",
+          lorenta_badge: "Sistem Çekirdeği",
+          lorenta_p: "İşletme zekası yeniden tanımlandı. Gelişmiş bilişsel mimari ve otonom ajan orkestrasyonu ile iş operasyonlarınızı güçlendirin.",
+          lightbloom_badge: "Şimdi Oyna",
+          lightbloom_p: "Güneş ışığının stratejiyle buluştuğu bir bulmaca oyunu. Işını yönlendirmek ve uyuyan çiçeği uyandırmak için sabit açılı aynalar yerleştirin.",
+          xpify_badge: "+1.000 Premium Kullanıcı",
+          xpify_p: "Yapay zeka destekli yaşam asistanınız. Xpify ile gününüzü düzenleyin, alışkanlıklarınızı takip edin ve gerçek hayat seviyenizi yükseltin.",
+          neon_badge: "Yakında",
+          neon_p: "80'ler nostaljisinin cyberpunk estetiğiyle buluştuğu bu yarışta, reflekslerinizi test edin ve liderlik tablosunun zirvesine yarışın!",
+          sky_badge: "Yakında",
+          sky_p: "Bulutların arasında hava gemisi imparatorluğunuzu kurun. Yüzen adaları keşfedin, gökyüzü düşmanlarıyla savaşın ve mirasınızı oluşturun.",
+          join_h2: "BİR SONRAKİ EFSANEYİ BİRLİKTE YAZALIM.",
+          join_p: "Geliştirme tutkusunu paylaşan yetenekli insanlar arıyoruz. Fark yaratmak için Lorenta Labs'e katılın.",
+          career_btn: "Kariyer Fırsatları",
+          legal_h4: "Yasal",
+          terms_a: "Kullanım Koşulları",
+          privacy_a: "Gizlilik",
+          contact_h4: "İletişim"
+        }
+      };
+
+      function updateLanguage(lang) {
+        const isTr = lang === 'tr';
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (uiTranslations[lang][key]) el.innerText = uiTranslations[lang][key];
+        });
+
+        const switcher = document.getElementById('lang-switcher');
+        const trText = document.getElementById('lang-tr');
+        const enText = document.getElementById('lang-en');
+
+        if (isTr) {
+          switcher.classList.add('lang-tr-active');
+          switcher.classList.remove('lang-en-active');
+          trText.classList.add('active-text');
+          enText.classList.add('inactive-text');
+        } else {
+          switcher.classList.add('lang-en-active');
+          switcher.classList.remove('lang-tr-active');
+          enText.classList.add('active-text');
+          trText.classList.add('inactive-text');
+        }
+        localStorage.setItem('preferredLang', lang);
+      }
+
+      document.getElementById('lang-switcher').addEventListener('click', () => {
+        const currentLang = localStorage.getItem('preferredLang') || 'en';
+        updateLanguage(currentLang === 'en' ? 'tr' : 'en');
+      });
+
       document.addEventListener('DOMContentLoaded', () => {
+        updateLanguage(localStorage.getItem('preferredLang') || 'en');
         const els = document.querySelectorAll('.fade-in');
         const io = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
@@ -367,36 +446,22 @@
         }, 500);
       };
 
-
-
-      // --- ANA SAYFA MARTI KAZAK DEĞİŞTİRME ---
       const martiWrapper = document.getElementById('marti-wrapper');
       const defaultImg = document.getElementById('footer-ali');
       const themedImg = document.getElementById('footer-ali-themed');
-
-      // Kullanılabilecek kazakların listesi (Dosya isimlerinle aynı olmalı)
       const sweaters = ['home'];
 
       if (martiWrapper) {
           martiWrapper.addEventListener('click', () => {
-              // Eğer şu an temalı kazak görünmüyorsa, rastgele bir tane seç ve göster
               if (themedImg.classList.contains('opacity-0')) {
                   const randomApp = sweaters[Math.floor(Math.random() * sweaters.length)];
                   themedImg.src = `images/img/ali_${randomApp}.png`;
-
                   themedImg.onload = () => {
                       themedImg.classList.remove('opacity-0');
                       themedImg.classList.add('opacity-100');
                       defaultImg.classList.add('opacity-0');
                   };
-                  
-                  // Görsel yoksa hata vermemesi için
-                  themedImg.onerror = () => {
-                      themedImg.classList.add('opacity-0');
-                      defaultImg.classList.remove('opacity-0');
-                  };
               } else {
-                  // Standart hale geri dön
                   themedImg.classList.add('opacity-0');
                   themedImg.classList.remove('opacity-100');
                   defaultImg.classList.remove('opacity-0');

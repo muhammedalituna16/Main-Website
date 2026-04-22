@@ -85,7 +85,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
         #marti-wrapper:active {
-            transform: scale(0.95); /* Tıklayınca hafifçe küçülme efekti */
+            transform: scale(0.95);
         }
 
         #marti-wrapper {
@@ -110,9 +110,9 @@
               class="h-[5rem] w-auto rounded-2xl" />
         </a>
 
-        <div class="flex space-x-12">
-          <a href="../index.html#games" class="nav-link text-lg font-extrabold uppercase tracking-wide hover:text-[#585858] transition-colors">Projects</a>
-          <a href="../legal/contact/" class="nav-link text-lg font-extrabold uppercase tracking-wide hover:text-[#585858] transition-colors">Contact</a>
+        <div class="flex space-x-12 mr-24">
+          <a href="../index.html#games" class="nav-link text-lg font-extrabold uppercase tracking-wide hover:text-[#585858] transition-colors" data-i18n="nav_projects">Projects</a>
+          <a href="../legal/contact/" class="nav-link text-lg font-extrabold uppercase tracking-wide hover:text-[#585858] transition-colors" data-i18n="nav_contact">Contact</a>
         </div>
       </nav>
     </header>
@@ -148,14 +148,14 @@
 
         <section class="py-20 lg:py-24 bg-[var(--bg-main)]">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12">Key Features</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-12" data-i18n="features_h2">Key Features</h2>
                 <div id="p-features" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
             </div>
         </section>
 
         <section class="gallery-section py-20 lg:py-24 bg-[var(--bg-secondary)]">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12">Showcase</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-12" data-i18n="showcase_h2">Showcase</h2>
                 <div id="p-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </section>
@@ -170,7 +170,6 @@
                     src="../images/img/ali.png" 
                     alt="Lorenta Labs Logo" 
                     class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10">
-                
                 <img id="footer-ali-themed" 
                     src="" 
                     alt="Lorenta Labs Themed" 
@@ -189,14 +188,14 @@
             </a>
           </div>
           <div>
-            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Legal</h4>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="legal_h4">Legal</h4>
             <nav class="flex flex-col space-y-3">
-              <a href="../legal/terms/" class="hover:text-sky-400 transition-colors">Terms</a>
-              <a href="../legal/privacy/" class="hover:text-sky-400 transition-colors">Privacy</a>
+              <a href="../legal/terms/" class="hover:text-sky-400 transition-colors" data-i18n="terms_a">Terms</a>
+              <a href="../legal/privacy/" class="hover:text-sky-400 transition-colors" data-i18n="privacy_a">Privacy</a>
             </nav>
           </div>
           <div>
-            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Get In Touch</h4>
+            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="contact_h4">Get In Touch</h4>
             <a href="../legal/contact/" class="hover:text-sky-400 transition-colors">info@lorentalabs.com</a>
           </div>
         </div>
@@ -205,5 +204,42 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const uiTranslations = {
+        en: {
+          nav_projects: "Projects",
+          nav_contact: "Contact",
+          features_h2: "Key Features",
+          showcase_h2: "Showcase",
+          legal_h4: "Legal",
+          terms_a: "Terms",
+          privacy_a: "Privacy",
+          contact_h4: "Get In Touch"
+        },
+        tr: {
+          nav_projects: "Projeler",
+          nav_contact: "İletişim",
+          features_h2: "Öne Çıkan Özellikler",
+          showcase_h2: "Galeri",
+          legal_h4: "Yasal",
+          terms_a: "Kullanım Koşulları",
+          privacy_a: "Gizlilik",
+          contact_h4: "İletişim"
+        }
+      };
+
+      function updateLanguage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (uiTranslations[lang][key]) el.innerText = uiTranslations[lang][key];
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        updateLanguage(savedLang);
+      });
+    </script>
 </body>
 </html>

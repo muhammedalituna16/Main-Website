@@ -8,9 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const data = projectsData[appKey];
+    const lang = localStorage.getItem('preferredLang') || 'en';
+    const content = data[lang];
 
     // Meta ve Tema Ayarları
-    document.title = `${data.title}`;
+    document.title = `${content.title}`;
     const root = document.documentElement;
     root.style.setProperty('--primary-color', data.themeColor || '#f9d720');
     root.style.setProperty('--bg-main', data.bgColor || '#ffffff');
@@ -23,16 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // NameLogo ve Title
     const titleContainer = document.getElementById('p-title');
     if (data.nameLogo) {
-        titleContainer.innerHTML = `<img src="${data.nameLogo}" alt="${data.title}" class="mx-auto h-64 md:h-[350px] w-auto object-contain">`;
+        titleContainer.innerHTML = `<img src="${data.nameLogo}" alt="${content.title}" class="mx-auto h-64 md:h-[350px] w-auto object-contain">`;
     } else {
-        titleContainer.innerText = data.title || "";
+        titleContainer.innerText = content.title || "";
     }
 
     // Hakkında Başlığı, Açıklama ve Logo
     const aboutTitle = document.getElementById('p-about-title');
-    if (aboutTitle) aboutTitle.innerText = `About ${data.title}`;
+    if (aboutTitle) {
+        aboutTitle.innerText = lang === 'tr' ? `${content.title} Hakkında` : `About ${content.title}`;
+    }
 
-    document.getElementById('p-description').innerText = data.description || "";
+    document.getElementById('p-description').innerText = content.description || "";
     const mainLogo = document.getElementById('p-logo');
     if (mainLogo) mainLogo.src = data.logo || "";
     
@@ -57,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Features
     const featuresContainer = document.getElementById('p-features');
     if (featuresContainer) {
-        featuresContainer.innerHTML = (data.features || []).map(f => `
+        featuresContainer.innerHTML = (content.features || []).map(f => `
             <div class="feature-card p-8 rounded-xl border border-gray-500/10 shadow-sm transition-all" style="background-color: var(--bg-main)">
                 <h3 class="text-xl font-bold mb-2 text-center" style="color: var(--primary-color)">${f.title}</h3>
                 <p class="opacity-80 text-center">${f.desc}</p>
@@ -84,23 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const themedImg = document.getElementById('footer-ali-themed');
     
     if (martiWrapper && appKey) {
-        // Sayfa açıldığında temalı resmi arka planda hazırla
         const themedSrc = `../images/img/ali_${appKey}.png`;
         themedImg.src = themedSrc;
 
-        // Eğer temalı resim bulunamazsa (dosya yoksa) alanı gizle
         themedImg.onerror = () => {
             themedImg.style.display = 'none';
         };
 
         martiWrapper.addEventListener('click', () => {
-            // Eğer temalı resim görünmüyorsa (opacity 0 ise)
             if (themedImg.classList.contains('opacity-0')) {
                 themedImg.classList.remove('opacity-0');
                 themedImg.classList.add('opacity-100');
                 defaultImg.classList.add('opacity-0');
             } else {
-                // Standart hale geri dön
                 themedImg.classList.add('opacity-0');
                 themedImg.classList.remove('opacity-100');
                 defaultImg.classList.remove('opacity-0');
