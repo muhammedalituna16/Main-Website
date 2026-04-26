@@ -72,45 +72,6 @@ const projectsData = {
             "../images/xpify_images/xpify-screen6.jpg"
         ]
     },
-    "cosmos": {
-        en: {
-            title: "ZenTurtle",
-            description: "ZenTurtle is your spiritual companion designed to interpret the unseen. Using advanced machine learning, it provides personalized coffee readings, tarot insights, and astrological forecasts instantly. Unlock the mysteries of your future and receive daily spiritual guidance tailored to your unique cosmic energy.",
-            features: [
-                { title: "AI Coffee Reading", desc: "Snap a photo and let AI analyze the symbols in your cup." },
-                { title: "Tarot Insights", desc: "Deep interpretations of tarot cards powered by modern algorithms." },
-                { title: "Daily Horoscopes", desc: "Personalized astrological forecasts based on the stars." },
-                { title: "Spiritual Guidance", desc: "Talk to your AI mystic for 24/7 clarity and advice." }
-            ]
-        },
-        tr: {
-            title: "ZenTurtle",
-            description: "ZenTurtle, görünmeyeni yorumlamak için tasarlanmış ruhani yol arkadaşınızdır. Gelişmiş makine öğrenimi kullanarak anında kişiselleştirilmiş kahve falları, tarot yorumları ve astrolojik tahminler sunar. Geleceğinizin gizemlerini çözün ve benzersiz kozmik enerjinize göre uyarlanmış günlük ruhsal rehberlik alın.",
-            features: [
-                { title: "Yapay Zeka Kahve Falı", desc: "Bir fotoğraf çekin ve AI'nın fincanınızdaki sembolleri analiz etmesine izin verin." },
-                { title: "Tarot Yorumları", desc: "Modern algoritmalarla desteklenen derin tarot kartı analizleri." },
-                { title: "Günlük Burç Yorumları", desc: "Yıldızlara dayalı kişiselleştirilmiş astrolojik tahminler." },
-                { title: "Ruhsal Rehberlik", desc: "7/24 netlik ve tavsiye için yapay zeka mistiğinizle konuşun." }
-            ]
-        },
-        nameLogo: "../images/cosmos_images/cosmos-logo.png",
-        fontFamily: "'Lora', serif",
-        themeColor: "#ab6eb7",
-        bgColor: "#050510",
-        secondaryBg: "#0f0f25",
-        textColor: "#E0E0E0",
-        heroGradient: "rgba(183, 110, 121, 0.4)",
-        logo: "../images/cosmos_images/cosmos.png",
-        playStore: "https://play.google.com/store/apps/details?id=com.lorentalabs.falai",
-        appStore: "https://apps.apple.com/us/app/cosmos-astrology-tarot/id6758571788",
-        screenshots: [
-            "../images/cosmos_images/cosmos-screen1.png",
-            "../images/cosmos_images/cosmos-screen2.png",
-            "../images/cosmos_images/cosmos-screen3.png",
-            "../images/cosmos_images/cosmos-screen4.png",
-            "../images/cosmos_images/cosmos-screen5.png"
-        ]
-    },
     "light-bloom": {
         en: {
             title: "Light Bloom",
@@ -149,71 +110,5 @@ const projectsData = {
             "../images/lightbloom_images/lightbloom-mockup-4.png",
             "../images/lightbloom_images/lightbloom-mockup-5.png"
         ]
-    },
-    "neon-racer": {
-        en: {
-            title: "Neon Racer",
-            description: "Push your reflexes to the limit in a metropolis illuminated by neon lights. proving you're the fastest driver in an 80s aesthetic meets futuristic cyberpunk atmosphere. Upgrade your vehicle, unlock new tracks, and dominate the global leaderboard.",
-            features: [
-                { title: "Mind-Blowing Speed", desc: "A sense of speed that pushes the limits and fluid gameplay." },
-                { title: "Retrowave Soundtracks", desc: "Immersive and licensed music fitting the 80s theme." },
-                { title: "Leaderboards", desc: "Compete with players worldwide and aim for the top." },
-                { title: "Extensive Customization", desc: "Customize car colors, rims, and neons to your taste." }
-            ]
-        },
-        tr: {
-            title: "Neon Racer",
-            description: "Neon ışıklarıyla aydınlatılmış bir metropolde reflekslerinizin sınırlarını zorlayın. 80'ler estetiğinin fütüristik cyberpunk atmosferiyle buluştuğu bu yarışta en hızlı sürücü olduğunuzu kanıtlayın.",
-            features: [
-                { title: "Baş Döndürücü Hız", desc: "Sınırları zorlayan hız hissi ve akıcı oynanış." },
-                { title: "Retrowave Müzikler", desc: "80'ler temasına uygun sürükleyici ve lisanslı müzikler." },
-                { title: "Liderlik Tabloları", desc: "Dünya çapındaki oyuncularla rekabet edin ve zirveyi hedefleyin." },
-                { title: "Geniş Özelleştirme", desc: "Araba renklerini, jantları ve neonları zevkinize göre özelleştirin." }
-            ]
-        },
-        nameLogo: "../images/neonracer_images/neon-racer.png",
-        fontFamily: "'Lato', sans-serif",
-        themeColor: "#a855f7",
-        bgColor: "#0f051a",
-        secondaryBg: "#1a0b2e",
-        textColor: "#f3f4f6",
-        heroGradient: "rgba(17, 24, 39, 0.9)",
-        logo: "../images/neonracer_images/neon-racer.png",
-        playStore: "#",
-        appStore: "#",
-        screenshots: ["../images/neonracer_images/neon-racer.png"]
-    },
-    "sky-frontier": {
-        en: {
-            title: "Sky Frontier",
-            description: "Sky Frontier is a survival-adventure where you craft, explore, and conquer the skies. Navigate your crew through hostile weather, floating islands, and dangerous airzones. Experience a mix of tactical action and peaceful discovery aboard your airship.",
-            features: [
-                { title: "Story Campaign", desc: "Uncover the truth behind the Lost Skies and civilizations." },
-                { title: "Free Roam", desc: "Explore islands and skies at your own pace with airship control." },
-                { title: "Co-op Multiplayer", desc: "Play with up to 4 friends to manage resources together." },
-                { title: "Sky Arena", desc: "Battle other airships in real-time PvP combat." }
-            ]
-        },
-        tr: {
-            title: "Sky Frontier",
-            description: "Sky Frontier, gökyüzünü inşa ettiğiniz, keşfettiğiniz ve fethettiğiniz bir hayatta kalma-macera oyunudur. Mürettebatınızı zorlu hava koşulları ve yüzen adalar arasında yönlendirin.",
-            features: [
-                { title: "Hikaye Modu", desc: "Kayıp Gökyüzü ve medeniyetlerin ardındaki gerçeği ortaya çıkarın." },
-                { title: "Serbest Dolaşım", desc: "Hava gemisi kontrolüyle adaları ve gökyüzünü kendi hızınızda keşfedin." },
-                { title: "Eşli Çok Oyunculu", desc: "Kaynakları birlikte yönetmek için 4 arkadaşınıza kadar birlikte oynayın." },
-                { title: "Gökyüzü Arenası", desc: "Gerçek zamanlı PvP savaşlarında diğer hava gemileriyle çarpışın." }
-            ]
-        },
-        nameLogo: "../images/skyfrontier_images/sky-frontier.png",
-        fontFamily: "'Lato', sans-serif",
-        themeColor: "#3b82f6",
-        bgColor: "#0f172a",
-        secondaryBg: "#1e293b",
-        textColor: "#e2e8f0",
-        heroGradient: "rgba(15, 23, 42, 0.85)",
-        logo: "../images/skyfrontier_images/sky-frontier.png",
-        playStore: "#",
-        appStore: "#",
-        screenshots: ["../images/skyfrontier_images/sky-frontier.png"]
     }
 };
