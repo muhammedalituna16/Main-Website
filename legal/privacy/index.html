@@ -160,20 +160,24 @@
     <footer class="bg-black text-gray-400 border-t border-gray-800">
       <div class="container mx-auto px-6 py-16">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
-          <div class="flex flex-col items-center md:items-start">
+          <div class="flex flex-col items-center md:items-start order-last md:order-first">
             <div class="relative w-60 h-60 cursor-pointer mx-auto md:mx-0 transition-transform duration-200 active:scale-95 origin-bottom" id="marti-wrapper">                <img id="footer-ali" 
-                    src="../../images/img/ali.png" 
+                    src="../../images/img/ali.png"
                     alt="Lorenta Labs Logo" 
                     class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10">
                 <img id="footer-ali-themed" 
-                    src="../../images/img/ali_legal.png" 
-                    alt="Lorenta Labs Legal" 
+                    src="" 
+                    alt="Lorenta Labs Themed" 
                     class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out opacity-0 z-20">
             </div>
           </div>
           <div class="w-full self-start flex justify-center items-start space-x-5">
             <a href="https://instagram.com/lorentalabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
             </a>
             <a href="https://www.linkedin.com/company/lorenta-labs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
               <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM7 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.1 3.4 6.1 7.8V24h-5V16c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H7z"/></svg>
@@ -185,13 +189,13 @@
           <div>
             <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="legal_h4">Legal</h4>
             <nav class="flex flex-col space-y-3">
-              <a href="../terms/index.html" class="hover:text-sky-400 transition-colors" data-i18n="terms_a">Terms</a>
-              <a href="./index.html" class="hover:text-sky-400 transition-colors" data-i18n="privacy_a">Privacy</a>
+              <a href="../terms/" class="hover:text-sky-400 transition-colors" data-i18n="terms_a">Terms</a>
+              <a href="../privacy/" class="hover:text-sky-400 transition-colors" data-i18n="privacy_a">Privacy</a>
             </nav>
           </div>
           <div>
             <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="contact_h4">Get In Touch</h4>
-            <a href="../contact/index.html" class="hover:text-sky-400 transition-colors">info@lorentalabs.com</a>
+            <a href="../contact/" class="hover:text-sky-400 transition-colors">info@lorentalabs.com</a>
           </div>
         </div>
         <div class="mt-0 pt-8 border-t border-gray-800 text-center text-sm">
@@ -331,17 +335,22 @@
       });
 
 
-      // Martı Tıklama Özelliği
+      // SWEATER
       const martiWrapper = document.getElementById('marti-wrapper');
       const defaultImg = document.getElementById('footer-ali');
       const themedImg = document.getElementById('footer-ali-themed');
+      const sweaters = ['legal'];
 
       if (martiWrapper) {
           martiWrapper.addEventListener('click', () => {
               if (themedImg.classList.contains('opacity-0')) {
-                  themedImg.classList.remove('opacity-0');
-                  themedImg.classList.add('opacity-100');
-                  defaultImg.classList.add('opacity-0');
+                  const randomApp = sweaters[Math.floor(Math.random() * sweaters.length)];
+                  themedImg.src = `../../images/img/ali_${randomApp}.png`;
+                  themedImg.onload = () => {
+                      themedImg.classList.remove('opacity-0');
+                      themedImg.classList.add('opacity-100');
+                      defaultImg.classList.add('opacity-0');
+                  };
               } else {
                   themedImg.classList.add('opacity-0');
                   themedImg.classList.remove('opacity-100');

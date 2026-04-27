@@ -2,22 +2,46 @@ const projectsData = {
     "lorenta-os": {
         en: {
             title: "Lorenta OS",
-            description: "The cognitive brain of your enterprise. Orchestrate complex workflows, unify business intelligence, and automate operations with the power of Agentic AI. A seamless bridge between human strategy and autonomous execution.",
+            description: "Most AI tools answer questions. Lorenta OS runs your business. It ingests every document, decision, and data point your company has ever produced — then reasons over it, routes it through your ERP and CRM systems, and takes autonomous action. No dashboards to refresh. No reports to read. Just outcomes.",
             features: [
-                { title: "Autonomous Finance", desc: "AI-driven cash flow monitoring and real-time financial reporting." },
-                { title: "Operational Intelligence", desc: "Centralized command center for supply chain and international logistics." },
-                { title: "Cognitive Planning", desc: "Advanced resource allocation and production scheduling for high-end manufacturing." },
-                { title: "Agent Orchestration", desc: "Multi-layered AI agents collaborating to solve cross-departmental bottlenecks." }
+                {
+                    title: "Data Ingestion",
+                    desc: "Every contract, invoice, email, and ERP record is continuously indexed into a living knowledge graph — structured and unstructured alike."
+                },
+                {
+                    title: "Corporate Memory",
+                    desc: "Past decisions, supplier histories, budget constraints, and approval chains are permanently encoded. Context your team forgot. Nothing the system does."
+                },
+                {
+                    title: "Cognitive Reasoning",
+                    desc: "Complex requests are decomposed into task trees. Each sub-task is evaluated, prioritized, and executed through a multi-agent orchestration layer with full failure recovery."
+                },
+                {
+                    title: "Action Layer",
+                    desc: "Lorenta OS doesn't recommend — it acts. Stock alerts trigger procurement flows. Anomalies escalate to approvals. Reports write themselves. Your operations run on intelligence."
+                }
             ]
         },
         tr: {
             title: "Lorenta OS",
-            description: "İşletmenizin bilişsel beyni. Karmaşık iş akışlarını yönetin, iş zekasını birleştirin ve Agentic AI gücüyle operasyonları otomatize edin. İnsan stratejisi ile otonom uygulama arasında kusursuz bir köprü.",
+            description: "Çoğu yapay zeka aracı soru yanıtlar. Lorenta OS işletmenizi yönetir. Şirketinizin ürettiği her belgeyi, kararı ve veri noktasını sürekli olarak öğrenir; ERP ve CRM sistemleriniz üzerinden akıl yürütür ve otonom aksiyon alır. Yenilenecek dashboard yok. Okunacak rapor yok. Sadece sonuç.",
             features: [
-                { title: "Otonom Finans", desc: "Yapay zeka destekli nakit akışı takibi ve gerçek zamanlı finansal raporlama." },
-                { title: "Operasyonel Zeka", desc: "Tedarik zinciri ve uluslararası lojistik için merkezi komuta merkezi." },
-                { title: "Bilişsel Planlama", desc: "Üst düzey üretim için gelişmiş kaynak tahsisi ve üretim planlaması." },
-                { title: "Ajan Orkestrasyonu", desc: "Departmanlar arası darboğazları çözmek için iş birliği yapan çok katmanlı yapay zeka ajanları." }
+                {
+                    title: "Veri Alımı",
+                    desc: "Her sözleşme, fatura, e-posta ve ERP kaydı; yapılandırılmış ya da yapılandırılmamış fark etmeksizin canlı bir bilgi grafiğine sürekli olarak indekslenir."
+                },
+                {
+                    title: "Kurumsal Hafıza",
+                    desc: "Geçmiş kararlar, tedarikçi geçmişleri, bütçe kısıtları ve onay zincirleri kalıcı olarak kodlanır. Ekibinizin unuttuğu bağlam, sistemin hiçbir zaman unutmadığı bağlamdır."
+                },
+                {
+                    title: "Bilişsel Akıl Yürütme",
+                    desc: "Karmaşık talepler görev ağaçlarına ayrıştırılır. Her alt görev; tam hata kurtarma mekanizmasına sahip çok-ajan orkestrasyon katmanı üzerinden değerlendirilir, önceliklendirilir ve yürütülür."
+                },
+                {
+                    title: "Aksiyon Katmanı",
+                    desc: "Lorenta OS öneri yapmaz — aksiyon alır. Stok uyarıları tedarik akışlarını tetikler. Anomaliler onay süreçlerine yükseltilir. Raporlar kendiliğinden yazılır. Operasyonlarınız zeka üzerinde çalışır."
+                }
             ]
         },
         nameLogo: "../images/lorentaos_images/namelogo.png",

@@ -408,6 +408,8 @@
         }, 500);
       };
 
+
+      // SWEATER
       const martiWrapper = document.getElementById('marti-wrapper');
       const defaultImg = document.getElementById('footer-ali');
       const themedImg = document.getElementById('footer-ali-themed');
@@ -433,35 +435,35 @@
 
 
       // Sayfa yüklendiğinde çalışacak şekilde script içine ekle:
-document.querySelector('.hero-title-serif').addEventListener('click', () => {
-    const target = document.getElementById('philosophy');
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    
-    // Süreyi buradan milisaniye cinsinden ayarlayabilirsin (1500ms = 1.5 saniye)
-    const duration = 1500; 
-    let start = null;
-
-    function step(timestamp) {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
+    document.querySelector('.hero-title-serif').addEventListener('click', () => {
+        const target = document.getElementById('philosophy');
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
         
-        // Easing fonksiyonu: Bu kısım kaymanın "ivmesini" belirler (easeInOutCubic)
-        const progressPercentage = Math.min(progress / duration, 1);
-        const ease = progressPercentage < 0.5 
-            ? 4 * progressPercentage * progressPercentage * progressPercentage 
-            : 1 - Math.pow(-2 * progressPercentage + 2, 3) / 2;
+        // Süreyi buradan milisaniye cinsinden ayarlayabilirsin (1500ms = 1.5 saniye)
+        const duration = 1500; 
+        let start = null;
 
-        window.scrollTo(0, startPosition + distance * ease);
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            
+            // Easing fonksiyonu: Bu kısım kaymanın "ivmesini" belirler (easeInOutCubic)
+            const progressPercentage = Math.min(progress / duration, 1);
+            const ease = progressPercentage < 0.5 
+                ? 4 * progressPercentage * progressPercentage * progressPercentage 
+                : 1 - Math.pow(-2 * progressPercentage + 2, 3) / 2;
 
-        if (progress < duration) {
-            window.requestAnimationFrame(step);
+            window.scrollTo(0, startPosition + distance * ease);
+
+            if (progress < duration) {
+                window.requestAnimationFrame(step);
+            }
         }
-    }
 
-    window.requestAnimationFrame(step);
-});
+        window.requestAnimationFrame(step);
+    });
     </script>
   </body>
 </html>

@@ -98,43 +98,8 @@
 </div>
     </section>
 
-    <div id="marti-wrapper" class="bottom-image cursor-pointer h-auto relative">
-        <img id="footer-ali" 
-            src="../../images/img/ali.png" 
-            alt="Ali's Avatar" 
-            class="w-full h-auto object-contain transition-opacity duration-700 ease-in-out opacity-100 block"
-            onerror="this.onerror=null;this.src='https://placehold.co/600x600/1f2937/ffffff?text=ALI';">
-        
-        <img id="footer-ali-themed" 
-            src="../../images/img/ali_home.png" 
-            alt="Ali's Avatar Themed" 
-            class="absolute inset-0 w-full h-auto object-contain transition-opacity duration-700 ease-in-out opacity-0 block">
-    </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const martiWrapper = document.getElementById('marti-wrapper');
-            const defaultImg = document.getElementById('footer-ali');
-            const themedImg = document.getElementById('footer-ali-themed');
-
-            if (martiWrapper) {
-                martiWrapper.addEventListener('click', () => {
-                    const isThemedVisible = themedImg.classList.contains('opacity-100');
-
-                    if (!isThemedVisible) {
-                        themedImg.classList.remove('opacity-0');
-                        themedImg.classList.add('opacity-100');
-                        defaultImg.classList.remove('opacity-100');
-                        defaultImg.classList.add('opacity-0');
-                    } else {
-                        themedImg.classList.remove('opacity-100');
-                        themedImg.classList.add('opacity-0');
-                        defaultImg.classList.remove('opacity-0');
-                        defaultImg.classList.add('opacity-100');
-                    }
-                });
-            }
-        });
 
         document.addEventListener("DOMContentLoaded", () => {
             const emailH1 = document.getElementById('email-copy');
