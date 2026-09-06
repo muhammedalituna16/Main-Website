@@ -1,0 +1,22 @@
+# Tavuk Games
+
+> Tavuk Games is an independent game studio founded by two cousins, Arif Tuna and Ali Tuna. We create playful, physics-driven multiplayer games built around emergent comedy, chaos, and memorable moments with friends. Our flagship upcoming title is "THE WATER IS FINE", a chaotic co-op seafaring adventure coming soon to Steam.
+
+## Pages
+
+- [Homepage](https://tavuk.games/): Official website of Tavuk Games featuring studio philosophy, game showcase, social channels, and mascot interactions.
+- [The Water is Fine](https://tavuk.games/projects/?app=the-water-is-fine): Detailed overview of "THE WATER IS FINE" — a chaotic co-op seafaring survival party game on Steam. Features, gameplay premise, and media.
+- [Contact](https://tavuk.games/legal/contact/): Direct contact info and inquiries (hello@tavuk.games).
+
+## Games
+
+- [THE WATER IS FINE](https://tavuk.games/projects/?app=the-water-is-fine):
+  - Platform: PC (Steam)
+  - Genre: Co-op, Survival, Nautical Adventure, Physics-based Party Game
+  - Release Window: Coming Soon (Q2 2026)
+  - Premise: Play as the world's most unqualified shipping crew trying to keep a constantly sinking, chaotic vessel afloat while transporting eccentric cargo through treacherous ocean hazards.
+
+## Optional
+
+- [Terms of Service](https://tavuk.games/legal/terms/): Terms and conditions for Tavuk Games website and services.
+- [Privacy Policy](https://tavuk.games/legal/privacy/): Privacy policy regarding user data and analytics.

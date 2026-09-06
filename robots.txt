@@ -1,0 +1,27 @@
+# Robots.txt for https://tavuk.games
+# Allow all standard search engines and AI answer engines to index Tavuk Games
+
+User-agent: *
+Allow: /
+
+# Explicit allowance for AI Search & LLM scrapers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap reference
+Sitemap: https://tavuk.games/sitemap.xml

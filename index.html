@@ -1,469 +1,647 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lorenta Labs</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tavuk Games</title>
+  <meta name="description"
+    content="Tavuk Games is an independent game studio founded by two cousins, focused on creating playful multiplayer games built around fun, chaos, and memorable moments with friends." />
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <meta name="theme-color" content="#ffffff">
 
-    <style>
-      body {
-        font-family: "Lato", sans-serif;
-        background-color: #000000;
-        color: #f3f4f6;
+  <!-- Canonical & Social Meta -->
+  <link rel="canonical" href="https://tavuk.games/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tavuk.games/" />
+  <meta property="og:title" content="Tavuk Games | Independent Game Studio" />
+  <meta property="og:description" content="We're Tavuk Games — a small indie game studio making playful multiplayer games built around fun, chaos, and memorable moments with friends." />
+  <!-- 1200x630 custom Open Graph image for Discord, X/Twitter, WhatsApp, and LinkedIn -->
+  <meta property="og:image" content="https://tavuk.games/images/brand/og-main.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Tavuk Games Studio Mascot and Logo" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@tavuk.games" />
+  <meta name="twitter:url" content="https://tavuk.games/" />
+  <meta name="twitter:title" content="Tavuk Games | Independent Game Studio" />
+  <meta name="twitter:description" content="We're Tavuk Games — a small indie game studio making playful multiplayer games built around fun, chaos, and memorable moments with friends." />
+  <meta name="twitter:image" content="https://tavuk.games/images/brand/og-main.jpg" />
+
+  <!-- Schema.org Structured Data (AEO & Search Engines) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://tavuk.games/#organization",
+    "name": "Tavuk Games",
+    "url": "https://tavuk.games/",
+    "logo": "https://tavuk.games/images/brand/mascot.png",
+    "image": "https://tavuk.games/images/brand/og-main.jpg",
+    "description": "Tavuk Games is an independent game studio founded by two cousins, focused on creating playful multiplayer games built around fun, chaos, and memorable moments with friends.",
+    "slogan": "We probably shouldn't be making games.",
+    "email": "hello@tavuk.games",
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Arif Tuna",
+        "jobTitle": "Co-Founder & Game Developer"
+      },
+      {
+        "@type": "Person",
+        "name": "Ali Tuna",
+        "jobTitle": "Co-Founder & Game Developer"
       }
+    ],
+    "sameAs": [
+      "https://instagram.com/tavuk.games",
+      "https://tiktok.com/@tavuk.games",
+      "https://youtube.com/@tavukgames",
+      "https://www.linkedin.com/company/tavuk-games"
+    ]
+  }
+  </script>
 
-      .hero-section-istanbul {
-        background-image: url("images/img/background.jpg");
-        background-size: cover;
-        background-position: center;
-      }
+  <script src="https://cdn.tailwindcss.com"></script>
 
-      .hero-overlay {
-        background: linear-gradient(
-          to top,
+  <link rel="preload" href="fonts/noot-regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: "Noot";
+      src: url("fonts/noot-regular.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      font-family: "Lato", sans-serif;
+      background-color: #000000;
+      color: #f3f4f6;
+    }
+
+    .hero-section-istanbul {
+      background-image: url("images/ui/hero-bg.webp");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(to top,
           rgba(0, 0, 0, 1) 5%,
           rgba(0, 0, 0, 0.5) 40%,
-          rgba(0, 0, 0, 0.2) 100%
-        );
-      }
+          rgba(0, 0, 0, 0.2) 100%);
+    }
 
-      .hero-title-serif {
-        font-family: "Luckiest Guy", cursive;
-        text-shadow: 0px 3px 15px rgba(0, 0, 0, 0.7);
-        line-height: 1.2;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        transform: translateY(-75%);
-      }
+    .hero-title-serif {
+      font-family: "Noot", "Luckiest Guy", cursive;
+      text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      transform: translateY(-75%);
+    }
 
-      .game-showcase {
-        display: flex;
-        flex-direction: column;
-        gap: 8rem;
-      }
+    .game-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+    }
 
+    .game-entry {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 2rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (min-width: 768px) {
       .game-entry {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
-        gap: 2rem;
-        text-decoration: none;
-        color: inherit;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
       }
 
-      @media (min-width: 768px) {
-        .game-entry {
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-        }
-        .game-entry:nth-child(even) .game-visuals {
-          order: 2;
-        }
-        .game-entry:nth-child(even) .game-details {
-          order: 1;
-        }
+      .game-entry:nth-child(even) .game-visuals {
+        order: 2;
       }
 
-      .game-visuals img {
-        border-radius: 20px;
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
-        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      .game-entry:nth-child(even) .game-details {
+        order: 1;
+      }
+    }
+
+    .game-visuals img {
+      border-radius: 20px;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .game-entry:hover .game-visuals img {
+      transform: scale(1.05);
+    }
+
+    .game-details h3 {
+      color: #ffffff;
+    }
+
+    .game-details p {
+      color: #d1d5db;
+    }
+
+    .social-proof {
+      background-color: rgba(14, 165, 233, 0.1);
+      color: #38bdf8;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+
+    @keyframes chaosWobble {
+      0% { transform: scale(1.03) rotate(0deg); }
+      25% { transform: scale(1.04) rotate(-2deg); }
+      50% { transform: scale(1.03) rotate(2deg); }
+      75% { transform: scale(1.04) rotate(-1deg); }
+      100% { transform: scale(1.03) rotate(0deg); }
+    }
+
+    .btn-chaos-wobble {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    }
+
+    .btn-chaos-wobble:hover {
+      animation: chaosWobble 0.4s ease-in-out infinite;
+      box-shadow: 0 0 25px rgba(249, 215, 32, 0.6), 0 0 50px rgba(249, 215, 32, 0.2);
+    }
+
+    /* Mascot Idle & Interaction Micro-animations */
+    @keyframes mascotBob {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-8px) rotate(-1.5deg);
+      }
+      50% {
+        transform: translateY(-2px) rotate(1deg);
+      }
+      75% {
+        transform: translateY(-10px) rotate(1.5deg);
+      }
+    }
+
+    @keyframes mascotSquish {
+      0% { transform: scale(1, 1); }
+      30% { transform: scale(1.15, 0.85); }
+      50% { transform: scale(0.9, 1.12); }
+      70% { transform: scale(1.05, 0.95); }
+      100% { transform: scale(1, 1); }
+    }
+
+    .mascot-idle {
+      animation: mascotBob 4s ease-in-out infinite;
+      transform-origin: bottom center;
+      cursor: pointer;
+    }
+
+    .mascot-idle:hover {
+      animation: mascotBob 1.8s ease-in-out infinite;
+    }
+
+    .mascot-idle:active {
+      animation: mascotSquish 0.4s ease-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .fade-in {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .btn-chaos-wobble:hover, .mascot-idle {
+        animation: none !important;
+      }
+    }
+
+    .join-us-section {
+      background: linear-gradient(135deg, #1f2937, #000000);
+    }
+
+    .join-us-button {
+      background-color: #38bdf8;
+      color: #111827;
+      transition: all 0.3s ease;
+    }
+
+    .join-us-button:hover {
+      background-color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .social-icon {
+      color: #9ca3af;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: #38bdf8;
+      transform: translateY(-3px);
+    }
+
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.75s ease-out;
+    }
+
+    #splash-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .splash-logo {
+      display: inline-block;
+      animation: splash-pulse 2s ease-in-out infinite;
+    }
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .opacity-100 {
+      opacity: 1;
+    }
+
+
+    @keyframes splash-pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
       }
 
-      .game-entry:hover .game-visuals img {
-        transform: scale(1.05);
-      }
-
-      .game-details h3 {
-        color: #ffffff;
-      }
-      .game-details p {
-        color: #d1d5db;
-      }
-
-      .social-proof {
-        background-color: rgba(14, 165, 233, 0.1);
-        color: #38bdf8;
-        border: 1px solid rgba(14, 165, 233, 0.3);
-      }
-
-      .join-us-section {
-        background: linear-gradient(135deg, #1f2937, #000000);
-      }
-
-      .join-us-button {
-        background-color: #38bdf8;
-        color: #111827;
-        transition: all 0.3s ease;
-      }
-      .join-us-button:hover {
-        background-color: #ffffff;
-        transform: scale(1.05);
-      }
-
-      .social-icon {
-        color: #9ca3af;
-        transition: all 0.3s ease;
-      }
-      .social-icon:hover {
-        color: #38bdf8;
-        transform: translateY(-3px);
-      }
-
-      #splash-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #000000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
+      50% {
+        transform: scale(1.03);
         opacity: 1;
-        transition: opacity 0.75s ease-out;
       }
 
-      #splash-screen.hidden {
+      100% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes subtleFadeUp {
+      from {
         opacity: 0;
-        pointer-events: none;
+        transform: translateY(40px);
       }
 
-      .splash-logo {
-        display: inline-block;
-        animation: splash-pulse 2s ease-in-out infinite;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scrollWheelAnim {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
       }
 
-      .opacity-0 { opacity: 0; }
-      .opacity-100 { opacity: 1; }
-
-      #lang-switcher .active-text { color: #000 !important; }
-      #lang-switcher .inactive-text { color: #888 !important; }
-
-      .lang-tr-active #lang-indicator { transform: translateX(0); }
-      .lang-en-active #lang-indicator { transform: translateX(38px); }
-      
-      @keyframes splash-pulse {
-        0% { transform: scale(1); opacity: 0.9; }
-        50% { transform: scale(1.03); opacity: 1; }
-        100% { transform: scale(1); opacity: 0.9; }
+      20% {
+        opacity: 1;
       }
 
-      @keyframes subtleFadeUp {
-        from { opacity: 0; transform: translateY(40px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes scroll-anim {
-        0% { transform: translateY(-3px); }
-        50% { transform: translateY(3px); }
-        100% { transform: translateY(-3px); }
+      65% {
+        transform: translateY(12px);
+        opacity: 0.9;
       }
 
-      .fade-in { opacity: 0; }
-      .fade-in.visible { animation: subtleFadeUp 0.8s ease-out forwards; }
-    </style>
-  </head>
-  <body class="antialiased">
+      100% {
+        transform: translateY(16px);
+        opacity: 0;
+      }
+    }
 
-    <div id="splash-screen">
-      <div class="border-b border-gray-800 splash-logo px-12"> 
-        <img src="images/img/ali.png" alt="Lorenta Labs Loading..." class="h-60 w-auto">
-      </div>
+    @keyframes chevronPulse {
+
+      0%,
+      100% {
+        opacity: 0.35;
+        transform: translateY(0);
+      }
+
+      50% {
+        opacity: 0.9;
+        transform: translateY(3px);
+      }
+    }
+
+    .scroll-wheel-dot {
+      animation: scrollWheelAnim 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+
+    .scroll-chevron {
+      animation: chevronPulse 2s ease-in-out infinite;
+    }
+
+    #scroll-indicator {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    #scroll-indicator.scrolled {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 16px);
+    }
+
+    .fade-in {
+      opacity: 0;
+    }
+
+    .fade-in.visible {
+      animation: subtleFadeUp 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <div id="splash-screen">
+    <div class="border-b border-gray-800 splash-logo px-12">
+      <picture>
+        <source srcset="images/brand/mascot.webp" type="image/webp">
+        <img src="images/brand/mascot.png" alt="Tavuk Games Loading..." class="h-60 w-auto" width="240" height="240">
+      </picture>
+    </div>
+  </div>
+
+  <section class="relative h-screen flex items-center justify-center text-center p-4 hero-section-istanbul">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative z-10">
+      <h1 class="text-7xl md:text-9xl text-white uppercase hero-title-serif">
+        <span class="block">TAVUK</span>
+        <span class="block mt-2 md:mt-4">GAMES</span>
+      </h1>
     </div>
 
-    <div class="fixed top-6 right-6 z-[10000] flex items-center">
-      <div id="lang-switcher" class="relative w-20 h-9 bg-white/10 backdrop-blur-md border border-white/20 rounded-full cursor-pointer flex items-center px-1 text-[11px] font-bold tracking-widest transition-all duration-300 hover:border-white/40">
-        <div id="lang-indicator" class="absolute w-[34px] h-[28px] bg-white rounded-full transition-all duration-300 ease-out shadow-lg left-1 top-[3px]"></div>
-        
-        <span class="relative z-10 flex-1 text-center transition-colors duration-300" id="lang-tr">TR</span>
-        <span class="relative z-10 flex-1 text-center transition-colors duration-300" id="lang-en">EN</span>
+    <!-- Minimalist Scroll Down Indicator -->
+    <a href="#philosophy" id="scroll-indicator"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 group cursor-pointer select-none"
+      aria-label="Scroll to content">
+      <span
+        class="text-[10px] tracking-[0.35em] uppercase font-semibold text-gray-400 group-hover:text-[#f9d720] transition-colors duration-300">
+        SCROLL
+      </span>
+      <div
+        class="w-5 h-9 rounded-full border border-white/30 bg-black/30 backdrop-blur-sm flex items-start justify-center p-1.5 transition-all duration-300 group-hover:border-[#f9d720]/80 group-hover:shadow-[0_0_15px_rgba(249,215,32,0.25)]">
+        <div class="scroll-wheel-dot w-1 h-2 rounded-full bg-[#f9d720] shadow-[0_0_6px_#f9d720]"></div>
+      </div>
+      <svg class="w-3.5 h-3.5 text-gray-400/70 group-hover:text-[#f9d720] transition-colors duration-300 scroll-chevron"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </section>
+
+  <section id="philosophy" class="relative py-40 lg:py-52 bg-black"
+    style="background-image: url('images/ui/philosophy-bg.webp'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+    <div class="relative z-10 px-6 text-center">
+      <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in" data-i18n="philosophy_h2">We probably shouldn't
+        be making games.</h2>
+      <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-4xl mx-auto fade-in"
+        style="animation-delay: 200ms" data-i18n="philosophy_p">
+        Tavuk Games is an independent game studio founded by two cousins, focused on creating playful multiplayer games
+        built around fun, chaos, and memorable moments with friends.
+      </p>
+    </div>
+  </section>
+
+  <section id="games" class="py-20 lg:py-32 bg-black border-t border-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 fade-in" data-i18n="adventures_h2">Games</h2>
+
+      <div class="game-showcase">
+
+        <div class="game-entry fade-in group rounded-2xl p-6 md:p-8 bg-neutral-950/60 border border-neutral-800/80 hover:border-[#f9d720]/40 transition duration-300">
+          <a href="projects/?app=the-water-is-fine" class="game-visuals block overflow-hidden rounded-2xl md:order-1" title="THE WATER IS FINE Details">
+            <picture>
+              <source srcset="images/games/the-water-is-fine/hero.webp" type="image/webp">
+              <img loading="lazy" src="images/games/the-water-is-fine/hero.png" alt="THE WATER IS FINE"
+                class="w-full border border-gray-800 transition-transform duration-500 group-hover:scale-105"
+                onerror="this.onerror=null;this.src='images/games/the-water-is-fine/hero.png';">
+            </picture>
+          </a>
+          <div class="game-details text-center md:text-left md:order-2 px-2 md:px-6">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-4">
+              <div class="text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-flex items-center gap-2 bg-[#f9d720]/15 text-[#f9d720] border border-[#f9d720]/30 shadow-[0_0_12px_rgba(249,215,32,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-[#f9d720] animate-ping"></span>
+                Coming Soon
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">PC / Steam</span>
+            </div>
+
+            <a href="projects/?app=the-water-is-fine" class="inline-block">
+              <h3 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#f9d720]">
+                THE WATER IS FINE
+              </h3>
+            </a>
+
+            <p class="text-base sm:text-lg leading-relaxed text-gray-400 mb-8" data-i18n="game_p">
+              A chaotic co-op seafaring adventure where keeping the ship afloat is only half the battle. Team up with friends and dive into pure chaos.
+            </p>
+
+            <!-- Actions: Wishlist CTA & View Details -->
+            <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+              <a href="https://store.steampowered.com?utm_source=tavukgames_site&utm_medium=website&utm_campaign=wishlist_home"
+                target="_blank" rel="noopener noreferrer"
+                class="btn-chaos-wobble w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#f9d720] text-black font-black text-sm uppercase tracking-wider rounded-xl cursor-pointer shadow-[0_0_20px_rgba(249,215,32,0.3)]">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.005.105.005.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 14.819C1.948 20.088 6.782 24 12.5 24c6.627 0 12-5.373 12-12S18.627 0 11.979 0zM7.544 18.216l-1.619-.669c.306.666.924 1.155 1.674 1.248-.035-.19-.055-.382-.055-.579zm7.395-6.953c1.654 0 3-1.346 3-3s-1.346-3-3-3-3 1.346-3 3 1.346 3 3 3zm-6.079 5.373c-.925 0-1.676-.751-1.676-1.677 0-.274.072-.531.19-.757l1.737.718c-.015.083-.025.167-.025.253.001.799.648 1.447 1.447 1.447.247 0 .477-.066.682-.174l-.454 1.096c-.461.162-.977.254-1.514.254h-.057z"/>
+                </svg>
+                <span>Wishlist on Steam</span>
+              </a>
+
+              <a href="projects/?app=the-water-is-fine"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/5 hover:bg-white/10 text-white hover:text-[#f9d720] border border-white/10 hover:border-[#f9d720]/40 font-bold text-sm uppercase tracking-wider rounded-xl transition-all duration-300">
+                <span>View Details</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <section class="relative h-screen flex items-center justify-center text-center p-4 hero-section-istanbul">
-      <div class="absolute inset-0 hero-overlay"></div>
-      <div class="relative z-10">
-          <h1 class="text-7xl md:text-9xl text-white uppercase hero-title-serif">
-            <span class="block">LORENTA</span>
-            <span class="block mt-2 md:mt-4">LABS</span>
-          </h1>
-      </div>
-    </section>
-
-    <section id="philosophy" class="relative py-40 lg:py-52 bg-black" style="background-image: url('images/img/background1.jpg'); background-size: cover; background-position: center;">
-      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-      <div class="relative z-10 px-6 text-center">
-        <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in" data-i18n="philosophy_h2">Dream. Build. Disrupt.</h2>
-        <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-4xl mx-auto fade-in" style="animation-delay: 200ms" data-i18n="philosophy_p">
-          From immersive games to cutting-edge software — we turn ideas into bold digital experiences.
-        </p>
-      </div>
-    </section>
-
-    <section id="games" class="py-20 lg:py-32 bg-black border-t border-gray-800">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-20 fade-in" data-i18n="adventures_h2">Our Adventures</h2>
-
-        <div class="game-showcase">
-
-          <a href="projects/?app=lorenta-os" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] rounded-xl" title="Lorenta OS Details">
-            <div class="game-visuals md:order-1">
-              <img loading="lazy" src="images/lorentaos_images/lorentaos.png" alt="Lorenta OS" class="w-full border border-gray-800" onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/ffffff?text=LORENTA+OS';">
-            </div>
-            <div class="game-details text-center md:text-left md:order-2 px-6">
-              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-white">Lorenta OS</h3>
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 255, 255, 0.1); color: #ffffff; border-color: rgba(255, 255, 255, 0.3);" data-i18n="lorenta_badge">Cognitive Operating System</div>
-              <p class="text-lg leading-relaxed text-gray-400" data-i18n="lorenta_p">Enterprise intelligence redefined. Empowering your business operations through advanced cognitive architecture and autonomous agent orchestration.</p>
-            </div>
-          </a>
-
-          <a href="projects/?app=light-bloom" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#FFD200] rounded-xl" title="Light Bloom Game Details">
-            <div class="game-visuals md:order-1">
-              <img loading="lazy" src="images/lightbloom_images/light-bloom.png" alt="Light Bloom Game" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/2D5A38/FFF4D0?text=Light+Bloom';">
-            </div>
-            <div class="game-details text-center md:text-left md:order-2 px-6">
-              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#FFD200] lightbloom-title">Light Bloom</h3>
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(255, 210, 0, 0.1); color: #FFD200; border-color: rgba(255, 210, 0, 0.3);" data-i18n="lightbloom_badge">Play Now</div>
-              <p class="text-lg leading-relaxed" data-i18n="lightbloom_p">A puzzle game where sunlight meets strategy. Place fixed-angle mirrors to guide the beam and awaken the sleeping flower.</p>
-            </div>
-          </a>
-
-          <a href="projects/?app=xpify" class="game-entry fade-in group transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#F9D720] rounded-xl" title="Xpify App Details">
-            <div class="game-visuals md:order-1">
-              <img loading="lazy" src="images/xpify_images/xplogo.jpg" alt="Xpify App" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x600/1f2937/f3f4f6?text=Xpify';">
-            </div>
-            <div class="game-details text-center md:text-left md:order-2 px-6">
-              <h3 class="text-4xl lg:text-5xl font-black mb-4 transition-colors duration-300 group-hover:text-[#F9D720]">Xpify</h3>
-              <div class="social-proof text-sm font-bold px-4 py-2 rounded-lg inline-block mb-6" style="background-color: rgba(249, 215, 32, 0.1); color: #f9d720; border-color: rgba(249, 215, 32, 0.3);" data-i18n="xpify_badge">+1,000 Premium Users</div>
-              <p class="text-lg leading-relaxed text-[#F9D720]" data-i18n="xpify_p">Your AI-powered life assistant. Organize your day, track your habits, set goals, and level up your real life with Xpify.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 lg:py-24 border-t border-gray-800 join-us-section">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 fade-in" data-i18n="join_h2">LET'S WRITE THE NEXT LEGEND TOGETHER.</h2>
-        <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8 fade-in" style="animation-delay: 200ms" data-i18n="join_p">
-          We are looking for talented people who share a passion for development. Join us at Lorenta Labs to make a difference.
-        </p>
-        <a href="legal/contact/" class="join-us-button inline-block text-lg font-bold py-4 px-10 rounded-full fade-in" style="animation-delay: 400ms" data-i18n="career_btn">Career Opportunities</a>
-      </div>
-    </section>
-
-    <footer class="bg-black text-gray-400 border-t border-gray-800">
-      <div class="container mx-auto px-6 py-16">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
-          <div class="flex flex-col items-center md:items-start order-last md:order-first">
-            <div class="relative w-60 h-60 cursor-pointer mx-auto md:mx-0 transition-transform duration-200 active:scale-95 origin-bottom" id="marti-wrapper">                <img id="footer-ali" 
-                    src="images/img/ali.png" 
-                    alt="Lorenta Labs Logo" 
-                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out z-10">
-                <img id="footer-ali-themed" 
-                    src="" 
-                    alt="Lorenta Labs Themed" 
-                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out opacity-0 z-20">
-            </div>
-          </div>
-          <div class="w-full self-start flex justify-center items-start space-x-5">
-            <a href="https://instagram.com/lorentalabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/company/lorenta-labs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
-              <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM7 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.1 3.4 6.1 7.8V24h-5V16c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H7z"/></svg>
-            </a>
-            <a href="https://youtube.com/@lorentalabs" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
-              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-            </a>
-          </div>
-          <div>
-            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="legal_h4">Legal</h4>
-            <nav class="flex flex-col space-y-3">
-              <a href="legal/terms/" class="hover:text-sky-400 transition-colors" data-i18n="terms_a">Terms</a>
-              <a href="legal/privacy/" class="hover:text-sky-400 transition-colors" data-i18n="privacy_a">Privacy</a>
-            </nav>
-          </div>
-          <div>
-            <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4" data-i18n="contact_h4">Get In Touch</h4>
-            <a href="legal/contact/" class="hover:text-sky-400 transition-colors">info@lorentalabs.com</a>
+  <footer class="bg-black text-gray-400 border-t border-gray-800">
+    <div class="container mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+        <div class="flex flex-col items-center md:items-start order-last md:order-first">
+          <div
+            class="relative w-60 h-60 mx-auto md:mx-0 transition-transform duration-200 active:scale-95 origin-bottom mascot-idle"
+            id="marti-wrapper" title="Click or hover on Tavuk!">
+            <picture>
+              <source srcset="images/brand/mascot.webp" type="image/webp">
+              <img id="footer-ali" src="images/brand/mascot.png" alt="Tavuk Games 3D Mascot Character" class="w-full h-full object-contain" width="240" height="240" loading="lazy" decoding="async">
+            </picture>
           </div>
         </div>
-        <div class="mt-0 pt-8 border-t border-gray-800 text-center text-sm">
-          <p>© 2026 Lorenta Labs</p>
+        <div class="w-full self-start flex justify-center items-start space-x-5">
+          <a href="https://instagram.com/tavuk.games" target="_blank" rel="noopener noreferrer" class="social-icon"
+            aria-label="Instagram">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@tavuk.games" target="_blank" rel="noopener noreferrer" class="social-icon"
+            aria-label="TikTok" title="TikTok">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/tavuk-games" target="_blank" rel="noopener noreferrer"
+            class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor"
+                d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM7 8h4.8v2.2h.1c.7-1.2 2.4-2.5 4.9-2.5 5.2 0 6.1 3.4 6.1 7.8V24h-5V16c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H7z" />
+            </svg>
+          </a>
+          <a href="https://youtube.com/@tavukgames" target="_blank" rel="noopener noreferrer" class="social-icon"
+            aria-label="YouTube">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+        <div>
+          <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Legal</h4>
+          <nav class="flex flex-col space-y-3">
+            <a href="legal/terms/" class="hover:text-sky-400 transition-colors">Terms</a>
+            <a href="legal/privacy/" class="hover:text-sky-400 transition-colors">Privacy</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-bold text-white uppercase tracking-wider text-sm mb-4">Get In Touch</h4>
+          <a href="legal/contact/" class="hover:text-sky-400 transition-colors">hello@tavuk.games</a>
         </div>
       </div>
-    </footer>
+      <div class="mt-0 pt-8 border-t border-gray-800 text-center text-sm">
+        <p>© 2026 Tavuk Games</p>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-      const uiTranslations = {
-        en: {
-          philosophy_h2: "Dream. Build. Disrupt.",
-          philosophy_p: "From immersive games to cutting-edge software — we turn ideas into bold digital experiences.",
-          adventures_h2: "Our Adventures",
-          lorenta_badge: "Cognitive Operating System",
-          lorenta_p: "Enterprise intelligence redefined. Empowering your business operations through advanced cognitive architecture and autonomous agent orchestration.",
-          lightbloom_badge: "Play Now",
-          lightbloom_p: "A puzzle game where sunlight meets strategy. Place fixed-angle mirrors to guide the beam and awaken the sleeping flower.",
-          xpify_badge: "In Development",
-          xpify_p: "Your AI-powered life assistant. Organize your day, track your habits, set goals, and level up your real life with Xpify.",
-          join_h2: "LET'S WRITE THE NEXT LEGEND TOGETHER.",
-          join_p: "We are looking for talented people who share a passion for development. Join us at Lorenta Labs to make a difference.",
-          career_btn: "Career Opportunities",
-          legal_h4: "Legal",
-          terms_a: "Terms",
-          privacy_a: "Privacy",
-          contact_h4: "Get In Touch"
-        },
-        tr: {
-          philosophy_h2: "Hayal Et. İnşa Et. Dönüştür.",
-          philosophy_p: "Sürükleyici oyunlardan en yeni yazılımlara — fikirleri cesur dijital deneyimlere dönüştürüyoruz.",
-          adventures_h2: "Maceralarımız",
-          lorenta_badge: "Bilişsel İşletim Sistemi",
-          lorenta_p: "İşletme zekası yeniden tanımlandı. Gelişmiş bilişsel mimari ve otonom ajan orkestrasyonu ile iş operasyonlarınızı güçlendirin.",
-          lightbloom_badge: "Şimdi Oyna",
-          lightbloom_p: "Güneş ışığının stratejiyle buluştuğu bir bulmaca oyunu. Işını yönlendirmek ve uyuyan çiçeği uyandırmak için sabit açılı aynalar yerleştirin.",
-          xpify_badge: "Geliştirme Aşamasında",
-          xpify_p: "Yapay zeka destekli yaşam asistanınız. Xpify ile gününüzü düzenleyin, alışkanlıklarınızı takip edin ve gerçek hayat seviyenizi yükseltin.",
-          join_h2: "BİR SONRAKİ EFSANEYİ BİRLİKTE YAZALIM.",
-          join_p: "Geliştirme tutkusunu paylaşan yetenekli insanlar arıyoruz. Fark yaratmak için Lorenta Labs'e katılın.",
-          career_btn: "Kariyer Fırsatları",
-          legal_h4: "Yasal",
-          terms_a: "Kullanım Koşulları",
-          privacy_a: "Gizlilik",
-          contact_h4: "İLETİŞİM"
-        }
-      };
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.fade-in');
 
-      function updateLanguage(lang) {
-        const isTr = lang === 'tr';
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (uiTranslations[lang][key]) el.innerText = uiTranslations[lang][key];
-        });
-
-        const switcher = document.getElementById('lang-switcher');
-        const trText = document.getElementById('lang-tr');
-        const enText = document.getElementById('lang-en');
-
-        if (isTr) {
-          switcher.classList.add('lang-tr-active');
-          switcher.classList.remove('lang-en-active');
-          trText.classList.add('active-text');
-          enText.classList.add('inactive-text');
-        } else {
-          switcher.classList.add('lang-en-active');
-          switcher.classList.remove('lang-tr-active');
-          enText.classList.add('active-text');
-          trText.classList.add('inactive-text');
-        }
-        localStorage.setItem('preferredLang', lang);
-      }
-
-      document.getElementById('lang-switcher').addEventListener('click', () => {
-        const currentLang = localStorage.getItem('preferredLang') || 'en';
-        updateLanguage(currentLang === 'en' ? 'tr' : 'en');
-      });
-
-      document.addEventListener('DOMContentLoaded', () => {
-        updateLanguage(localStorage.getItem('preferredLang') || 'en');
-        const els = document.querySelectorAll('.fade-in');
+      if (prefersReduced) {
+        els.forEach(el => el.classList.add('visible'));
+      } else {
         const io = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
           });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
         els.forEach(el => io.observe(el));
-      });
+      }
+    });
 
-      window.onload = function() {
-        const splashScreen = document.getElementById('splash-screen');
-        setTimeout(() => {
-          splashScreen.classList.add('hidden');
-        }, 500);
-      };
+    window.onload = function () {
+      const splashScreen = document.getElementById('splash-screen');
+      setTimeout(() => {
+        splashScreen.classList.add('hidden');
+      }, 500);
+    };
 
+    function smoothScrollToPhilosophy(e) {
+      if (e) e.preventDefault();
+      const target = document.getElementById('philosophy');
+      if (!target) return;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
 
-      // SWEATER
-      const martiWrapper = document.getElementById('marti-wrapper');
-      const defaultImg = document.getElementById('footer-ali');
-      const themedImg = document.getElementById('footer-ali-themed');
-      const sweaters = ['home'];
+      const duration = 1200;
+      let start = null;
 
-      if (martiWrapper) {
-          martiWrapper.addEventListener('click', () => {
-              if (themedImg.classList.contains('opacity-0')) {
-                  const randomApp = sweaters[Math.floor(Math.random() * sweaters.length)];
-                  themedImg.src = `images/img/ali_${randomApp}.png`;
-                  themedImg.onload = () => {
-                      themedImg.classList.remove('opacity-0');
-                      themedImg.classList.add('opacity-100');
-                      defaultImg.classList.add('opacity-0');
-                  };
-              } else {
-                  themedImg.classList.add('opacity-0');
-                  themedImg.classList.remove('opacity-100');
-                  defaultImg.classList.remove('opacity-0');
-              }
-          });
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+
+        const progressPercentage = Math.min(progress / duration, 1);
+        const ease = progressPercentage < 0.5
+          ? 4 * progressPercentage * progressPercentage * progressPercentage
+          : 1 - Math.pow(-2 * progressPercentage + 2, 3) / 2;
+
+        window.scrollTo(0, startPosition + distance * ease);
+
+        if (progress < duration) {
+          window.requestAnimationFrame(step);
+        }
       }
 
+      window.requestAnimationFrame(step);
+    }
 
-      // Sayfa yüklendiğinde çalışacak şekilde script içine ekle:
-    document.querySelector('.hero-title-serif').addEventListener('click', () => {
-        const target = document.getElementById('philosophy');
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        
-        // Süreyi buradan milisaniye cinsinden ayarlayabilirsin (1500ms = 1.5 saniye)
-        const duration = 1500; 
-        let start = null;
+    const heroTitle = document.querySelector('.hero-title-serif');
+    if (heroTitle) heroTitle.addEventListener('click', smoothScrollToPhilosophy);
 
-        function step(timestamp) {
-            if (!start) start = timestamp;
-            const progress = timestamp - start;
-            
-            // Easing fonksiyonu: Bu kısım kaymanın "ivmesini" belirler (easeInOutCubic)
-            const progressPercentage = Math.min(progress / duration, 1);
-            const ease = progressPercentage < 0.5 
-                ? 4 * progressPercentage * progressPercentage * progressPercentage 
-                : 1 - Math.pow(-2 * progressPercentage + 2, 3) / 2;
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    if (scrollIndicator) scrollIndicator.addEventListener('click', smoothScrollToPhilosophy);
 
-            window.scrollTo(0, startPosition + distance * ease);
-
-            if (progress < duration) {
-                window.requestAnimationFrame(step);
-            }
+    window.addEventListener('scroll', () => {
+      const indicator = document.getElementById('scroll-indicator');
+      if (indicator) {
+        if (window.scrollY > 80) {
+          indicator.classList.add('scrolled');
+        } else {
+          indicator.classList.remove('scrolled');
         }
+      }
+    }, { passive: true });
+  </script>
+</body>
 
-        window.requestAnimationFrame(step);
-    });
-    </script>
-  </body>
 </html>
